@@ -27,8 +27,14 @@ namespace prySerafiniGiorgi_IEFI
 
         private void consultaClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAgregarNuevosClientes objVentanaBuscarCliente = new frmAgregarNuevosClientes();
+            frmBuscarCliente objVentanaBuscarCliente = new frmBuscarCliente();
             objVentanaBuscarCliente.ShowDialog();
+        }
+
+        private void eliminarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoDeSocios objVentanaListadoDeSocios = new frmListadoDeSocios();
+            objVentanaListadoDeSocios.ShowDialog();
         }
     }
 }

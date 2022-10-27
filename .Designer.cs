@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.grpDatosClientes = new System.Windows.Forms.GroupBox();
+            this.lblSaldo = new System.Windows.Forms.Label();
+            this.lblDeuda = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.grpDatosClientes.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -53,28 +53,44 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DNI";
             // 
-            // groupBox1
+            // grpDatosClientes
             // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 93);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(272, 146);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del cliente";
+            this.grpDatosClientes.Controls.Add(this.lblSaldo);
+            this.grpDatosClientes.Controls.Add(this.lblDeuda);
+            this.grpDatosClientes.Controls.Add(this.lblNombre);
+            this.grpDatosClientes.Controls.Add(this.label4);
+            this.grpDatosClientes.Controls.Add(this.label3);
+            this.grpDatosClientes.Controls.Add(this.label2);
+            this.grpDatosClientes.Location = new System.Drawing.Point(12, 93);
+            this.grpDatosClientes.Name = "grpDatosClientes";
+            this.grpDatosClientes.Size = new System.Drawing.Size(272, 146);
+            this.grpDatosClientes.TabIndex = 8;
+            this.grpDatosClientes.TabStop = false;
+            this.grpDatosClientes.Text = "Datos del cliente";
             // 
-            // label6
+            // lblSaldo
             // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(85, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 26);
-            this.label6.TabIndex = 11;
+            this.lblSaldo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSaldo.Location = new System.Drawing.Point(153, 109);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(113, 26);
+            this.lblSaldo.TabIndex = 13;
+            // 
+            // lblDeuda
+            // 
+            this.lblDeuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDeuda.Location = new System.Drawing.Point(153, 66);
+            this.lblDeuda.Name = "lblDeuda";
+            this.lblDeuda.Size = new System.Drawing.Size(113, 26);
+            this.lblDeuda.TabIndex = 12;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNombre.Location = new System.Drawing.Point(85, 23);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(181, 26);
+            this.lblNombre.TabIndex = 11;
             // 
             // label4
             // 
@@ -106,28 +122,12 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre";
             // 
-            // label5
+            // txtDni
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(153, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 26);
-            this.label5.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Location = new System.Drawing.Point(153, 109);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 26);
-            this.label7.TabIndex = 13;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(49, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtDni.Location = new System.Drawing.Point(49, 18);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(156, 20);
+            this.txtDni.TabIndex = 9;
             // 
             // cmdBuscar
             // 
@@ -137,6 +137,7 @@
             this.cmdBuscar.TabIndex = 10;
             this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
             // button2
             // 
@@ -164,13 +165,13 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cmdBuscar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.grpDatosClientes);
             this.Controls.Add(this.label1);
             this.Name = "frmBuscarCliente";
             this.Text = "Buscar cliente";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpDatosClientes.ResumeLayout(false);
+            this.grpDatosClientes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,14 +180,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox grpDatosClientes;
+        private System.Windows.Forms.Label lblSaldo;
+        private System.Windows.Forms.Label lblDeuda;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Button cmdBuscar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -46,12 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsClientes.cs" />
-    <Compile Include="frmBuscarCliente.cs">
+    <Compile Include="clsSocio.cs" />
+    <Compile Include="frmBuscarSocio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarCliente.Designer.cs">
-      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>frmBuscarSocio.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
@@ -65,16 +66,25 @@
     <Compile Include="frmAgregarNuevosClientes.Designer.cs">
       <DependentUpon>frmAgregarNuevosClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoDeSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoDeSocios.Designer.cs">
+      <DependentUpon>frmListadoDeSocios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmBuscarCliente.resx">
-      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscarSocio.resx">
+      <DependentUpon>frmBuscarSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarNuevosClientes.resx">
       <DependentUpon>frmAgregarNuevosClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoDeSocios.resx">
+      <DependentUpon>frmListadoDeSocios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

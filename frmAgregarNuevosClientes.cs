@@ -16,5 +16,10 @@ namespace prySerafiniGiorgi_IEFI
         {
             InitializeComponent();
         }
+
+        private void frmAgregarNuevosClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

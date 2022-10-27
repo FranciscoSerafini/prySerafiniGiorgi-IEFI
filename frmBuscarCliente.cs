@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prySerafiniGiorgi_IEFI
 {
-    public partial class Form1 : Form
+    public partial class frmBuscarCliente : Form
     {
-        public Form1()
+        public frmBuscarCliente()
         {
             InitializeComponent();
         }

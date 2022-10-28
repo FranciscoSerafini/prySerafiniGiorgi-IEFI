@@ -20,13 +20,14 @@ namespace prySerafiniGiorgi_IEFI
         private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=IEFI.mdb";
         private string tabla = "Socio";
 
-        private decimal deuda;
+        private decimal saldo;
         private Int32 cantidad;
+        private decimal promedio;
 
         private Int32 dni;
         private string nombre;
-        private decimal deu;
-        private Int32 saldo;
+        
+        
 
         //propiedas de solo lecturas 
         public Int32 Dni_Socio 
@@ -39,19 +40,28 @@ namespace prySerafiniGiorgi_IEFI
             get { return nombre; }//retorna el valor del nombre
             set { nombre = value; }
         }
-        public Int32 Saldo
+        public decimal Saldo
+        {   
+           get { return saldo; }
+
+        } 
+        public decimal TotalSaldo
         {
             get { return saldo; }
-            
+           
+
         }
         public Int32 cantidadSocios
         {
             get { return cantidad; }
         }
-        public decimal promedioSueldos
+        public decimal promedioSaldo
         {
-            get { return saldo/cantidad;}
+            get { return saldo/cantidad; }
         }
+
+
+
 
 
 
@@ -93,7 +103,7 @@ namespace prySerafiniGiorgi_IEFI
                 
                 comando.Connection = conexion;
                 comando.CommandType = CommandType.TableDirect; //comando para traer la tabla
-                comando.CommandText = tabla;
+                comando.CommandText = "Socio";
 
 
                 
@@ -106,7 +116,7 @@ namespace prySerafiniGiorgi_IEFI
                         {
                             dni = DR.GetInt32(0);
                             nombre = DR.GetString(1);
-                            saldo = DR.GetInt32(5);
+                            saldo = DR.GetDecimal(5);
                         }
                     }
                 }
@@ -116,7 +126,7 @@ namespace prySerafiniGiorgi_IEFI
             catch (Exception)
             {
 
-                throw;
+                
             }
         }
 
@@ -124,47 +134,35 @@ namespace prySerafiniGiorgi_IEFI
         {
             try
             {
-                conexion.ConnectionString = cadenaConexion;
+                conexion.ConnectionString = cadenaConexion; //configuracion de la conexion
                 conexion.Open();
 
                 comando.Connection = conexion;
-                comando.CommandType = CommandType.TableDirect;
+                comando.CommandType = CommandType.TableDirect; //comando para traer la tabla
                 comando.CommandText = tabla;
 
-                adaptador = new OleDbDataAdapter(comando);
-                DataSet DS = new DataSet();//tabla en memoria ram que tiene datos de mi tabla
-                adaptador.Fill(DS);//metodo para rellenar la grilla
-                dgvGrilla.DataSource = DS.Tables[0];
-
-                
+                OleDbDataReader DR = comando.ExecuteReader();
                 dgvGrilla.Rows.Clear();
                 cantidad = 0;
                 saldo = 0;
-                OleDbDataReader DR = comando.ExecuteReader();
-                if (DR.HasRows)
+                while (DR.Read())
                 {
-                    while (DR.Read())
+                    if (DR.GetDecimal(5) > 0)
                     {
-
-                        if (DR.GetInt32(5) > 0)
-                         {
-                             cantidad = Dni_Socio + 1;
-                             saldo = saldo + DR.GetInt32(5);
-                     
-                        
-                        }
                     
+                        dgvGrilla.Rows.Add(DR.GetInt32(0), DR.GetString(1), DR.GetDecimal(5));
+                        cantidad++;
+                        saldo = saldo + DR.GetDecimal(5);
+
                     }
+                    
                 }
-
-
-
                 conexion.Close();
             }
             catch (Exception)
             {
 
-              //  throw;
+              
             }
         }
     }

@@ -26,9 +26,10 @@ namespace prySerafiniGiorgi_IEFI
         {
             clsSocio objCliente = new clsSocio();
             objCliente.ListarSocios(dgvGrilla);
+            lblTotalSueldos.Text = objCliente.TotalSaldo.ToString();
             lblPersonasInscr.Text = objCliente.cantidadSocios.ToString();
-            lblTotalSueldos.Text = objCliente.Saldo.ToString();
-            //lblPromedioSaldos.Text = objCliente.promedioSueldos.ToString();
+            lblPromedioSaldos.Text = objCliente.promedioSaldo.ToString();
+           
 
         }
 

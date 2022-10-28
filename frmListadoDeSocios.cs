@@ -25,7 +25,16 @@ namespace prySerafiniGiorgi_IEFI
         private void cmdListar_Click(object sender, EventArgs e)
         {
             clsSocio objCliente = new clsSocio();
-            objCliente.Listar(dgvGrilla);
+            objCliente.ListarSocios(dgvGrilla);
+            lblPersonasInscr.Text = objCliente.cantidadSocios.ToString();
+            lblTotalSueldos.Text = objCliente.Saldo.ToString();
+            //lblPromedioSaldos.Text = objCliente.promedioSueldos.ToString();
+
+        }
+
+        private void cmdGenerarReporte_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

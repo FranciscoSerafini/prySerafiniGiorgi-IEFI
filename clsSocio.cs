@@ -28,14 +28,15 @@ namespace prySerafiniGiorgi_IEFI
         private decimal deu;
         private Int32 saldo;
 
+        //propiedas de solo lecturas 
         public Int32 Dni_Socio 
         {
-            get { return dni; }
+            get { return dni; }//retorna el valor del dni
             set { dni = value; }
         }
         public string Nombre_Apellido
         {
-            get { return nombre; }
+            get { return nombre; }//retorna el valor del nombre
             set { nombre = value; }
         }
         public Int32 Saldo
@@ -43,9 +44,19 @@ namespace prySerafiniGiorgi_IEFI
             get { return saldo; }
             
         }
-        
+        public Int32 cantidadSocios
+        {
+            get { return cantidad; }
+        }
+        public decimal promedioSueldos
+        {
+            get { return saldo/cantidad;}
+        }
 
-        public void Listar(DataGridView dgvGrilla)
+
+
+        //metodos con los que trabajaremos
+        public void Listar(DataGridView dgvGrilla) //intentando 
         {
             try
             {
@@ -61,6 +72,7 @@ namespace prySerafiniGiorgi_IEFI
                 adaptador.Fill(DS);
 
                 dgvGrilla.DataSource = DS.Tables[0];
+
 
                 conexion.Close();
                 
@@ -82,6 +94,8 @@ namespace prySerafiniGiorgi_IEFI
                 comando.Connection = conexion;
                 comando.CommandType = CommandType.TableDirect; //comando para traer la tabla
                 comando.CommandText = tabla;
+
+
                 
                 OleDbDataReader DR = comando.ExecuteReader(); //recibe lo que tiene la tabla y el comando ejecuta
                 if (DR.HasRows) //preguntamos si hay filas
@@ -103,6 +117,54 @@ namespace prySerafiniGiorgi_IEFI
             {
 
                 throw;
+            }
+        }
+
+        public void ListarSocios(DataGridView dgvGrilla)
+        {
+            try
+            {
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+
+                adaptador = new OleDbDataAdapter(comando);
+                DataSet DS = new DataSet();//tabla en memoria ram que tiene datos de mi tabla
+                adaptador.Fill(DS);//metodo para rellenar la grilla
+                dgvGrilla.DataSource = DS.Tables[0];
+
+                
+                dgvGrilla.Rows.Clear();
+                cantidad = 0;
+                saldo = 0;
+                OleDbDataReader DR = comando.ExecuteReader();
+                if (DR.HasRows)
+                {
+                    while (DR.Read())
+                    {
+
+                        if (DR.GetInt32(5) > 0)
+                         {
+                             cantidad = Dni_Socio + 1;
+                             saldo = saldo + DR.GetInt32(5);
+                     
+                        
+                        }
+                    
+                    }
+                }
+
+
+
+                conexion.Close();
+            }
+            catch (Exception)
+            {
+
+              //  throw;
             }
         }
     }

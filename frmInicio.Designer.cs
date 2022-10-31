@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDelDesarroladorDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarNuevosClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,7 +40,6 @@
             this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeClieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeSociosDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDelDesarroladorDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,12 @@
             this.sistemasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.sistemasToolStripMenuItem.Text = "Sistemas";
             // 
+            // acercaDelDesarroladorDelSistemaToolStripMenuItem
+            // 
+            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Name = "acercaDelDesarroladorDelSistemaToolStripMenuItem";
+            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Text = "Acerca del desarrolador del sistema";
+            // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -71,8 +77,8 @@
             this.consultaClienteToolStripMenuItem,
             this.modificarClienteToolStripMenuItem,
             this.toolStripSeparator2,
-            this.eliminarClienteToolStripMenuItem,
             this.listadoDeClieToolStripMenuItem,
+            this.eliminarClienteToolStripMenuItem,
             this.listadoDeSociosDeudoresToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -81,57 +87,51 @@
             // agregarNuevosClientesToolStripMenuItem
             // 
             this.agregarNuevosClientesToolStripMenuItem.Name = "agregarNuevosClientesToolStripMenuItem";
-            this.agregarNuevosClientesToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.agregarNuevosClientesToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.agregarNuevosClientesToolStripMenuItem.Text = "Agregar nuevos clientes";
             this.agregarNuevosClientesToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevosClientesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
             // 
             // consultaClienteToolStripMenuItem
             // 
             this.consultaClienteToolStripMenuItem.Name = "consultaClienteToolStripMenuItem";
-            this.consultaClienteToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.consultaClienteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.consultaClienteToolStripMenuItem.Text = "Buscar socio";
             this.consultaClienteToolStripMenuItem.Click += new System.EventHandler(this.consultaClienteToolStripMenuItem_Click);
             // 
             // modificarClienteToolStripMenuItem
             // 
             this.modificarClienteToolStripMenuItem.Name = "modificarClienteToolStripMenuItem";
-            this.modificarClienteToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.modificarClienteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.modificarClienteToolStripMenuItem.Text = "Modificar socio";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(223, 6);
             // 
             // eliminarClienteToolStripMenuItem
             // 
             this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
-            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.eliminarClienteToolStripMenuItem.Text = "Listado de todos los clientes";
             this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
             // 
             // listadoDeClieToolStripMenuItem
             // 
             this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
-            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.listadoDeClieToolStripMenuItem.Text = "Listado de todos los socios";
+            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad";
             // 
             // listadoDeSociosDeudoresToolStripMenuItem
             // 
             this.listadoDeSociosDeudoresToolStripMenuItem.Name = "listadoDeSociosDeudoresToolStripMenuItem";
-            this.listadoDeSociosDeudoresToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.listadoDeSociosDeudoresToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.listadoDeSociosDeudoresToolStripMenuItem.Text = "Listado de socios deudores";
-            // 
-            // acercaDelDesarroladorDelSistemaToolStripMenuItem
-            // 
-            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Name = "acercaDelDesarroladorDelSistemaToolStripMenuItem";
-            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
-            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Text = "Acerca del desarrolador del sistema";
             // 
             // frmInicio
             // 

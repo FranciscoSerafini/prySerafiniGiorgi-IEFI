@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace prySerafiniGiorgi_IEFI
 {
-    public partial class frmAgregarNuevosClientes : Form
+    public partial class frmListadoDependiendoActividad : Form
     {
-        public frmAgregarNuevosClientes()
+        public frmListadoDependiendoActividad()
         {
             InitializeComponent();
-        }
-
-        private void frmAgregarNuevosClientes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmdAgregarCliente_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

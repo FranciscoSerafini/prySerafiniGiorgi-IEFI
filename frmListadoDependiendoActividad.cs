@@ -16,5 +16,12 @@ namespace prySerafiniGiorgi_IEFI
         {
             InitializeComponent();
         }
+
+        private void frmListadoDependiendoActividad_Load(object sender, EventArgs e)
+        {
+            clsActividad actividad = new clsActividad();
+            actividad.Listar(lstActividades);
+
+        }
     }
 }

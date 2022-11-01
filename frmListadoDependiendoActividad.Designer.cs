@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lstActividades = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,13 +59,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione un deporte";
             // 
-            // comboBox1
+            // lstActividades
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(170, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(101, 21);
-            this.comboBox1.TabIndex = 1;
+            this.lstActividades.FormattingEnabled = true;
+            this.lstActividades.Location = new System.Drawing.Point(170, 26);
+            this.lstActividades.Name = "lstActividades";
+            this.lstActividades.Size = new System.Drawing.Size(101, 21);
+            this.lstActividades.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -216,10 +216,11 @@
             this.Controls.Add(this.cmdExportar);
             this.Controls.Add(this.cmdListar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lstActividades);
             this.Controls.Add(this.label1);
             this.Name = "frmListadoDependiendoActividad";
             this.Text = "Listado dependiendo actividad";
+            this.Load += new System.EventHandler(this.frmListadoDependiendoActividad_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -230,7 +231,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox lstActividades;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

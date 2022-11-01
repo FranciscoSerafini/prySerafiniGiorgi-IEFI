@@ -35,10 +35,9 @@
             this.agregarNuevosClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.consultaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeClieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeSociosDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,10 +74,9 @@
             this.agregarNuevosClientesToolStripMenuItem,
             this.toolStripSeparator1,
             this.consultaClienteToolStripMenuItem,
-            this.modificarClienteToolStripMenuItem,
             this.toolStripSeparator2,
-            this.listadoDeClieToolStripMenuItem,
             this.eliminarClienteToolStripMenuItem,
+            this.listadoDeClieToolStripMenuItem,
             this.listadoDeSociosDeudoresToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -103,16 +101,17 @@
             this.consultaClienteToolStripMenuItem.Text = "Buscar socio";
             this.consultaClienteToolStripMenuItem.Click += new System.EventHandler(this.consultaClienteToolStripMenuItem_Click);
             // 
-            // modificarClienteToolStripMenuItem
-            // 
-            this.modificarClienteToolStripMenuItem.Name = "modificarClienteToolStripMenuItem";
-            this.modificarClienteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.modificarClienteToolStripMenuItem.Text = "Modificar socio";
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(223, 6);
+            // 
+            // listadoDeClieToolStripMenuItem
+            // 
+            this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
+            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad";
+            this.listadoDeClieToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClieToolStripMenuItem_Click);
             // 
             // eliminarClienteToolStripMenuItem
             // 
@@ -120,12 +119,6 @@
             this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.eliminarClienteToolStripMenuItem.Text = "Listado de todos los clientes";
             this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
-            // 
-            // listadoDeClieToolStripMenuItem
-            // 
-            this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
-            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad";
             // 
             // listadoDeSociosDeudoresToolStripMenuItem
             // 
@@ -158,7 +151,6 @@
         private System.Windows.Forms.ToolStripMenuItem agregarNuevosClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem consultaClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem eliminarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClieToolStripMenuItem;

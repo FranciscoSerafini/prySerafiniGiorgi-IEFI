@@ -61,10 +61,6 @@ namespace prySerafiniGiorgi_IEFI
         }
 
 
-
-
-
-
         //metodos con los que trabajaremos
         public void Listar(DataGridView dgvGrilla) //intentando 
         {
@@ -129,7 +125,6 @@ namespace prySerafiniGiorgi_IEFI
                 
             }
         }
-
         public void ListarSocios(DataGridView dgvGrilla)
         {
             try
@@ -165,6 +160,10 @@ namespace prySerafiniGiorgi_IEFI
               
             }
         }
+
+
+
+
     }
 
 

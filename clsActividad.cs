@@ -73,5 +73,23 @@ namespace prySerafiniGiorgi_IEFI
 
         }
 
+        public void FiltrarClientesDeUnaActividad(DataGridView Grilla, string Actividad)
+        {
+            try
+            {
+
+
+
+            }
+            catch (Exception)
+            {
+;
+
+
+            }
+        }
+
+
+
     }
 }

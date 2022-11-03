@@ -42,7 +42,7 @@ namespace prySerafiniGiorgi_IEFI
             Int32 DniCliente = Convert.ToInt32(txtDni.Text);
             clsSocio eliminar = new clsSocio();
             eliminar.Dni_Socio = DniCliente;
-            eliminar.BajaDeClientes();
+            eliminar.BajaDeSocios();
         }
     }
 }

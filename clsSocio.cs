@@ -201,7 +201,7 @@ namespace prySerafiniGiorgi_IEFI
             }
         }
 
-        public void BajaDeClientes()
+        public void BajaDeSocios()
         {
             try
             {
@@ -221,6 +221,27 @@ namespace prySerafiniGiorgi_IEFI
             catch (Exception)
             {
                 MessageBox.Show("Tu socio no pudo ser eliminado");
+            }
+        }
+        public void ModificarSocios()
+        {
+            try
+            {
+                String Sql = "";
+                Sql = 
+
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Tu socio pudo ser modificado con EXITO!!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Tu socio no pudo ser modficado");
             }
         }
     }

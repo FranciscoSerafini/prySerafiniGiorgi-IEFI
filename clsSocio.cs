@@ -201,7 +201,28 @@ namespace prySerafiniGiorgi_IEFI
             }
         }
 
+        public void BajaDeClientes()
+        {
+            try
+            {
+                String Sql = "";
+                Sql = "DELETE FROM Socio " +
+                    "WHERE(" + dni + "=[Dni_Socio])";
 
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Tu socio pudo ser eliminado con EXITO!!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Tu socio no pudo ser eliminado");
+            }
+        }
     }
 
 

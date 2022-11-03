@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoDeSocios));
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpConsultaDatos = new System.Windows.Forms.GroupBox();
             this.lblPromedioSaldos = new System.Windows.Forms.Label();
             this.lblTotalSueldos = new System.Windows.Forms.Label();
@@ -38,15 +42,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.grpConsultaDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvGrilla
             // 
+            this.dgvGrilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvGrilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -54,9 +57,29 @@
             this.Column3});
             this.dgvGrilla.Location = new System.Drawing.Point(17, 19);
             this.dgvGrilla.Name = "dgvGrilla";
+            this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.Size = new System.Drawing.Size(494, 201);
             this.dgvGrilla.TabIndex = 0;
             this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DNI";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Saldo";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // grpConsultaDatos
             // 
@@ -68,9 +91,10 @@
             this.grpConsultaDatos.Controls.Add(this.label2);
             this.grpConsultaDatos.Controls.Add(this.label1);
             this.grpConsultaDatos.Controls.Add(this.dgvGrilla);
+            this.grpConsultaDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpConsultaDatos.Location = new System.Drawing.Point(12, 12);
             this.grpConsultaDatos.Name = "grpConsultaDatos";
-            this.grpConsultaDatos.Size = new System.Drawing.Size(523, 474);
+            this.grpConsultaDatos.Size = new System.Drawing.Size(523, 414);
             this.grpConsultaDatos.TabIndex = 1;
             this.grpConsultaDatos.TabStop = false;
             this.grpConsultaDatos.Text = "Consulta de datos";
@@ -144,36 +168,22 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 500);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 427);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(539, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "DNI";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Saldo";
-            this.Column3.Name = "Column3";
-            // 
             // frmListadoDeSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 522);
+            this.ClientSize = new System.Drawing.Size(539, 449);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.grpConsultaDatos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListadoDeSocios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de socios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.grpConsultaDatos.ResumeLayout(false);

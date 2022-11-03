@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.grpDatosClientes = new System.Windows.Forms.GroupBox();
             this.lblSaldo = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.grpDatosClientes.Controls.Add(this.label4);
             this.grpDatosClientes.Controls.Add(this.label3);
             this.grpDatosClientes.Controls.Add(this.label2);
+            this.grpDatosClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDatosClientes.Location = new System.Drawing.Point(12, 93);
             this.grpDatosClientes.Name = "grpDatosClientes";
             this.grpDatosClientes.Size = new System.Drawing.Size(272, 146);
@@ -131,6 +133,7 @@
             // 
             // cmdBuscar
             // 
+            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdBuscar.Location = new System.Drawing.Point(130, 54);
             this.cmdBuscar.Name = "cmdBuscar";
             this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
@@ -141,6 +144,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(209, 245);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -150,6 +154,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(15, 245);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
@@ -168,7 +173,9 @@
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.grpDatosClientes);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBuscarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar cliente";
             this.grpDatosClientes.ResumeLayout(false);
             this.grpDatosClientes.PerformLayout();

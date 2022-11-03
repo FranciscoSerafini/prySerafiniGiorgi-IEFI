@@ -26,8 +26,11 @@ namespace prySerafiniGiorgi_IEFI
 
         private Int32 dni;
         private string nombre;
-        
-        
+        private string direccion;
+        private Int32 codSucursal;
+        private Int32 codActividad;
+
+
 
         //propiedas de solo lecturas 
         public Int32 Dni_Socio 
@@ -43,6 +46,7 @@ namespace prySerafiniGiorgi_IEFI
         public decimal Saldo
         {   
            get { return saldo; }
+            set { saldo = value; }
 
         } 
         public decimal TotalSaldo
@@ -59,7 +63,21 @@ namespace prySerafiniGiorgi_IEFI
         {
             get { return saldo/cantidad; }
         }
-
+        public string Direccion
+        {
+            get { return direccion; }//retorna el valor del nombre
+            set { direccion= value; }
+        }
+        public Int32 CodigoSucursal
+        {
+            get { return codSucursal; }
+            set { codSucursal = value; }
+        }
+        public Int32 CodigoActividad
+        {
+            get { return codActividad; }
+            set { codActividad = value; }
+        }
 
         //metodos con los que trabajaremos
         public void Listar(DataGridView dgvGrilla) //intentando 
@@ -161,7 +179,27 @@ namespace prySerafiniGiorgi_IEFI
             }
         }
 
-
+        public void RegistroClientes()
+        {
+            try
+            {
+                String Sql = "";
+                Sql = "INSERT INTO Socio (Dni_Socio,Nombre_Apellido,Direccion,Codigo_Sucursal,Codigo_Actividad,Saldo)";
+                Sql = Sql +  " VALUES (" + Dni_Socio + ",'" + Nombre_Apellido + "','" + Direccion+ "'," + CodigoSucursal+ "," + CodigoActividad + "," + Saldo + ")";
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Tu socio pudo ser registrado con EXITO!!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Tu socio no pudo ser registrado");
+            }
+        }
 
 
     }

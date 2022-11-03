@@ -20,7 +20,7 @@ namespace prySerafiniGiorgi_IEFI
         private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            frmAgregarNuevosClientes objVentanaNuevosClientes = new frmAgregarNuevosClientes();
+            frmNuevosSocios objVentanaNuevosClientes = new frmNuevosSocios();
             objVentanaNuevosClientes.ShowDialog();
 
         }

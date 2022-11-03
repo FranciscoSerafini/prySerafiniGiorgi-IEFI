@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDelDesarroladorDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,8 +37,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.consultaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.listadoDeClieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeClieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeSociosDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,19 +107,19 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(223, 6);
             // 
-            // listadoDeClieToolStripMenuItem
-            // 
-            this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
-            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad";
-            this.listadoDeClieToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClieToolStripMenuItem_Click);
-            // 
             // eliminarClienteToolStripMenuItem
             // 
             this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
             this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.eliminarClienteToolStripMenuItem.Text = "Listado de todos los clientes";
             this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
+            // 
+            // listadoDeClieToolStripMenuItem
+            // 
+            this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
+            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad";
+            this.listadoDeClieToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClieToolStripMenuItem_Click);
             // 
             // listadoDeSociosDeudoresToolStripMenuItem
             // 
@@ -130,12 +131,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(785, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmInicio";
             this.Text = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

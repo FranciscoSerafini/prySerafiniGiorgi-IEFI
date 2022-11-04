@@ -39,7 +39,13 @@ namespace prySerafiniGiorgi_IEFI
 
         private void listadoDeClieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListadoDependiendoActividad objVentana = new frmListadoDependiendoActividad();
+            frmListadoActividad objVentana = new frmListadoActividad();
+            objVentana.ShowDialog();
+        }
+
+        private void listadoDeSociosDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoDeTodosSocios objVentana = new frmListadoDeTodosSocios();
             objVentana.ShowDialog();
         }
     }

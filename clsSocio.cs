@@ -248,6 +248,45 @@ namespace prySerafiniGiorgi_IEFI
                 MessageBox.Show("Tu socio no pudo ser modficado");
             }
         }
+
+        public void FiltrarClientesDeUnaActividad(DataGridView Grilla, string Actividad)
+        {
+            try
+            {
+
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "Socio";
+                OleDbDataReader Lector = comando.ExecuteReader();
+                Grilla.Rows.Clear();
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        if (Lector.GetInt32(4) == Dni_Socio)
+                        {
+
+                            Grilla.Rows.Add(Lector.GetInt32(0), Lector.GetString(1));
+                            
+
+                        }
+
+                    }
+                }
+                conexion.Close();
+
+
+            }
+            catch (Exception)
+            {
+                ;
+
+
+            }
+        }
+
     }
 
 

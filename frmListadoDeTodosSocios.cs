@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace prySerafiniGiorgi_IEFI
 {
-    public partial class frmListadoDependiendoActividad : Form
+    public partial class frmListadoDeTodosSocios : Form
     {
-        public frmListadoDependiendoActividad()
+        public frmListadoDeTodosSocios()
         {
             InitializeComponent();
         }
 
-        private void frmListadoDependiendoActividad_Load(object sender, EventArgs e)
+        private void cmdListar_Click(object sender, EventArgs e)
         {
-            clsActividad actividad = new clsActividad();
-            actividad.Listar(lstActividades);
-
+            clsSocio listar = new clsSocio();
+            listar.Listar(dgvListadoSocios);
         }
     }
 }

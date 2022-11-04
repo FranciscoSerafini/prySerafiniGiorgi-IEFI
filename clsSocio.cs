@@ -130,7 +130,11 @@ namespace prySerafiniGiorgi_IEFI
                         {
                             dni = DR.GetInt32(0);
                             nombre = DR.GetString(1);
+                            direccion = DR.GetString(2);
+                            codSucursal = DR.GetInt32(3);
+                            codActividad = DR.GetInt32(4);
                             saldo = DR.GetDecimal(5);
+
                         }
                     }
                 }
@@ -223,12 +227,12 @@ namespace prySerafiniGiorgi_IEFI
                 MessageBox.Show("Tu socio no pudo ser eliminado");
             }
         }
-        public void ModificarSocios()
+        public void ModificarSocios(Int32 Dni_Socio)
         {
             try
             {
-                String Sql = "";
-                Sql = 
+                String Sql = "UPDATE Socio SET Dni_Socio = " + Dni_Socio + ", Nombre_Apellido= '" + Nombre_Apellido + "', Direccion= " + Direccion + ", Codigo_Sucursal= '" + CodigoSucursal + "' , Codigo_Actividad= '" + CodigoActividad + "' , Saldo= '" + Saldo + "'     WHERE [Dni_Socio] = '" + Dni_Socio + "'";
+
 
                 conexion.ConnectionString = cadenaConexion;
                 conexion.Open();

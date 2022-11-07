@@ -231,7 +231,13 @@ namespace prySerafiniGiorgi_IEFI
         {
             try
             {
-                String Sql = "UPDATE Socio SET Dni_Socio = " + Dni_Socio + ", Nombre_Apellido= '" + Nombre_Apellido + "', Direccion= " + Direccion + ", Codigo_Sucursal= '" + CodigoSucursal + "' , Codigo_Actividad= '" + CodigoActividad + "' , Saldo= '" + Saldo + "'     WHERE [Dni_Socio] = '" + Dni_Socio + "'";
+                String Sql = "UPDATE Socio SET " +
+                    "[Dni_Socio] = " + Dni_Socio + ", " +
+                    "[Nombre_Apellido] = '" + Nombre_Apellido + "', " +
+                    "[Direccion] = '" + Direccion + "', " +
+                    "[Codigo_Sucursal] = " + CodigoSucursal + " , " +
+                    "[Codigo_Actividad] = " + CodigoActividad + " ," +
+                    "[Saldo] = " + Saldo + " WHERE [Dni_Socio] = " + Dni_Socio ;
 
 
                 conexion.ConnectionString = cadenaConexion;

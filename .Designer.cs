@@ -48,12 +48,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.mskCodigoActividad = new System.Windows.Forms.MaskedTextBox();
-            this.mskCodigoSucursal = new System.Windows.Forms.MaskedTextBox();
-            this.mskSaldo = new System.Windows.Forms.MaskedTextBox();
-            this.mskDni = new System.Windows.Forms.MaskedTextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.mskDni = new System.Windows.Forms.MaskedTextBox();
+            this.mskSaldo = new System.Windows.Forms.MaskedTextBox();
+            this.mskCodigoSucursal = new System.Windows.Forms.MaskedTextBox();
+            this.mskCodigoActividad = new System.Windows.Forms.MaskedTextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.grpDatosClientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -144,6 +144,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(156, 20);
             this.txtDni.TabIndex = 9;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // cmdBuscar
             // 
@@ -260,36 +261,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
             // 
-            // txtNombre
+            // txtDireccion
             // 
-            this.txtNombre.Location = new System.Drawing.Point(145, 60);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(144, 21);
-            this.txtNombre.TabIndex = 15;
-            // 
-            // mskCodigoActividad
-            // 
-            this.mskCodigoActividad.Location = new System.Drawing.Point(145, 180);
-            this.mskCodigoActividad.Mask = "9";
-            this.mskCodigoActividad.Name = "mskCodigoActividad";
-            this.mskCodigoActividad.Size = new System.Drawing.Size(144, 21);
-            this.mskCodigoActividad.TabIndex = 17;
-            // 
-            // mskCodigoSucursal
-            // 
-            this.mskCodigoSucursal.Location = new System.Drawing.Point(145, 142);
-            this.mskCodigoSucursal.Mask = "9";
-            this.mskCodigoSucursal.Name = "mskCodigoSucursal";
-            this.mskCodigoSucursal.Size = new System.Drawing.Size(144, 21);
-            this.mskCodigoSucursal.TabIndex = 18;
-            // 
-            // mskSaldo
-            // 
-            this.mskSaldo.Location = new System.Drawing.Point(144, 213);
-            this.mskSaldo.Mask = "99999999999";
-            this.mskSaldo.Name = "mskSaldo";
-            this.mskSaldo.Size = new System.Drawing.Size(145, 21);
-            this.mskSaldo.TabIndex = 19;
+            this.txtDireccion.Location = new System.Drawing.Point(144, 98);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(144, 21);
+            this.txtDireccion.TabIndex = 21;
             // 
             // mskDni
             // 
@@ -299,13 +276,39 @@
             this.mskDni.Size = new System.Drawing.Size(144, 21);
             this.mskDni.TabIndex = 20;
             this.mskDni.ValidatingType = typeof(int);
+            this.mskDni.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskDni_MaskInputRejected);
             // 
-            // txtDireccion
+            // mskSaldo
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(144, 98);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(144, 21);
-            this.txtDireccion.TabIndex = 21;
+            this.mskSaldo.Location = new System.Drawing.Point(144, 213);
+            this.mskSaldo.Mask = "99999999999";
+            this.mskSaldo.Name = "mskSaldo";
+            this.mskSaldo.Size = new System.Drawing.Size(145, 21);
+            this.mskSaldo.TabIndex = 19;
+            // 
+            // mskCodigoSucursal
+            // 
+            this.mskCodigoSucursal.Location = new System.Drawing.Point(145, 142);
+            this.mskCodigoSucursal.Mask = "9";
+            this.mskCodigoSucursal.Name = "mskCodigoSucursal";
+            this.mskCodigoSucursal.Size = new System.Drawing.Size(144, 21);
+            this.mskCodigoSucursal.TabIndex = 18;
+            // 
+            // mskCodigoActividad
+            // 
+            this.mskCodigoActividad.Location = new System.Drawing.Point(145, 180);
+            this.mskCodigoActividad.Mask = "9";
+            this.mskCodigoActividad.Name = "mskCodigoActividad";
+            this.mskCodigoActividad.Size = new System.Drawing.Size(144, 21);
+            this.mskCodigoActividad.TabIndex = 17;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(145, 60);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(144, 21);
+            this.txtNombre.TabIndex = 15;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // frmBuscarCliente
             // 

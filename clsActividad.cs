@@ -45,7 +45,7 @@ namespace prySerafiniGiorgi_IEFI
 
         }
 
-        public void Listar(ComboBox combo) 
+        public void ListarC(ComboBox combo) 
         {
             try
             {

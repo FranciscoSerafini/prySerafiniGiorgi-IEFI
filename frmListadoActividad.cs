@@ -30,5 +30,20 @@ namespace prySerafiniGiorgi_IEFI
             clsSocio filtrar = new clsSocio();
             filtrar.FiltrarClientesDeUnaActividad(dgvListadoSucursales,filtro);
         }
+
+        private void cmdImprimir_Click(object sender, EventArgs e)
+        {
+            prtVentana.ShowDialog();//nos abre la interfaz de usuario para ver elegir donde queremos la impresion
+            prtDocumento.PrinterSettings = prtVentana.PrinterSettings; //asginamos la impresora que elegimos en la ventana
+            prtDocumento.Print();//ejecutara el metodo print
+            MessageBox.Show("Su reporte fue impreso");
+
+        }
+
+        private void prtDocumento_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            clsSocio reporte = new clsSocio();
+            reporte.Imprimir(e);
+        }
     }
 }

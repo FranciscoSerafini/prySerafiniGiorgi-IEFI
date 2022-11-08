@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Drawing;
+using System.Drawing.Printing;
 
 namespace prySerafiniGiorgi_IEFI
 {
@@ -290,7 +291,39 @@ namespace prySerafiniGiorgi_IEFI
 
             }
         }
+        public void Imprimir(PrintPageEventArgs reporte )
+        {
+            try
+            {
+                Int32 linea = 200;
+                Font tipoLetra = new Font("Arial", 10);
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = "Socio";
+                DataSet Ds = new DataSet();
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(Ds, tabla);
+                if (Ds.Tables[tabla].Rows.Count > 0)
+                {
+                    foreach  (DataRow fila in Ds.Tables[tabla].Rows )
+                    {
+                        reporte.Graphics.DrawString(fila["Dni_Socio"].ToString(),tipoLetra,Brushes.Black, 100,linea);
+                        reporte.Graphics.DrawString(fila["Nombre_Apellido"].ToString(), tipoLetra, Brushes.Black, 200, linea);
+                        reporte.Graphics.DrawString(fila["Direccion"].ToString(), tipoLetra, Brushes.Black, 300, linea);
+                        reporte.Graphics.DrawString(fila["Saldo"].ToString(), tipoLetra, Brushes.Black, 400, linea);
+                        linea = linea + 15;
+                    }
+                }
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
 
+                MessageBox.Show(e.ToString());
+            }
+        }
     }
 
 

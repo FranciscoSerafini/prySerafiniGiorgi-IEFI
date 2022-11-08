@@ -48,6 +48,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prtVentana = new System.Windows.Forms.PrintDialog();
+            this.prtDocumento = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSucursales)).BeginInit();
             this.SuspendLayout();
@@ -124,6 +126,7 @@
             this.cmdImprimir.TabIndex = 5;
             this.cmdImprimir.Text = "Imprimir";
             this.cmdImprimir.UseVisualStyleBackColor = true;
+            this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
             // 
             // label2
             // 
@@ -223,6 +226,14 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // prtVentana
+            // 
+            this.prtVentana.UseEXDialog = true;
+            // 
+            // prtDocumento
+            // 
+            this.prtDocumento.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDocumento_PrintPage);
+            // 
             // frmListadoActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +287,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.PrintDialog prtVentana;
+        private System.Drawing.Printing.PrintDocument prtDocumento;
     }
 }

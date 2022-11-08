@@ -255,7 +255,7 @@ namespace prySerafiniGiorgi_IEFI
             }
         }
 
-        public void FiltrarClientesDeUnaActividad(DataGridView Grilla, string Actividad)
+        public void FiltrarClientesDeUnaActividad(DataGridView Grilla, Int32 Actividad)
         {
             try
             {
@@ -263,19 +263,17 @@ namespace prySerafiniGiorgi_IEFI
                 conexion.ConnectionString = cadenaConexion;
                 conexion.Open();
                 comando.Connection = conexion;
-                comando.CommandType = CommandType.Text;
+                comando.CommandType = CommandType.TableDirect;
                 comando.CommandText = "Socio";
                 OleDbDataReader Lector = comando.ExecuteReader();
                 Grilla.Rows.Clear();
-                if (Lector.HasRows)
+                if (Lector.HasRows)// si hay filas se lee
                 {
-                    while (Lector.Read())
+                    while (Lector.Read())//leemos
                     {
-                        if (Lector.GetInt32(4) == Dni_Socio)
+                        if (Lector.GetInt32(4) == Actividad)
                         {
-
-                            Grilla.Rows.Add(Lector.GetInt32(0), Lector.GetString(1));
-                            
+                            Grilla.Rows.Add(Lector.GetInt32(0), Lector.GetString(1), Lector.GetString(2), Lector.GetDecimal(5));
 
                         }
 
@@ -287,7 +285,7 @@ namespace prySerafiniGiorgi_IEFI
             }
             catch (Exception)
             {
-                ;
+                
 
 
             }

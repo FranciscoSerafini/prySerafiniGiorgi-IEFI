@@ -37,9 +37,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.consultaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.listadoDeSociosDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeClieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeSociosDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDependiendoSucursalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,8 @@
             this.toolStripSeparator2,
             this.listadoDeSociosDeudoresToolStripMenuItem,
             this.eliminarClienteToolStripMenuItem,
-            this.listadoDeClieToolStripMenuItem});
+            this.listadoDeClieToolStripMenuItem,
+            this.listadoDependiendoSucursalToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -87,7 +89,7 @@
             // 
             this.agregarNuevosClientesToolStripMenuItem.Name = "agregarNuevosClientesToolStripMenuItem";
             this.agregarNuevosClientesToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.agregarNuevosClientesToolStripMenuItem.Text = "Agregar nuevos clientes";
+            this.agregarNuevosClientesToolStripMenuItem.Text = "Agregar nuevos clientes..";
             this.agregarNuevosClientesToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevosClientesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -99,7 +101,7 @@
             // 
             this.consultaClienteToolStripMenuItem.Name = "consultaClienteToolStripMenuItem";
             this.consultaClienteToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.consultaClienteToolStripMenuItem.Text = "Buscar socio";
+            this.consultaClienteToolStripMenuItem.Text = "Buscar socio..";
             this.consultaClienteToolStripMenuItem.Click += new System.EventHandler(this.consultaClienteToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
@@ -107,26 +109,33 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(251, 6);
             // 
-            // eliminarClienteToolStripMenuItem
-            // 
-            this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
-            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.eliminarClienteToolStripMenuItem.Text = "Listado de todos los clientes";
-            this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
-            // 
-            // listadoDeClieToolStripMenuItem
-            // 
-            this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
-            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad";
-            this.listadoDeClieToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClieToolStripMenuItem_Click);
-            // 
             // listadoDeSociosDeudoresToolStripMenuItem
             // 
             this.listadoDeSociosDeudoresToolStripMenuItem.Name = "listadoDeSociosDeudoresToolStripMenuItem";
             this.listadoDeSociosDeudoresToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.listadoDeSociosDeudoresToolStripMenuItem.Text = "Listado de los datos de los socios..";
             this.listadoDeSociosDeudoresToolStripMenuItem.Click += new System.EventHandler(this.listadoDeSociosDeudoresToolStripMenuItem_Click);
+            // 
+            // eliminarClienteToolStripMenuItem
+            // 
+            this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
+            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.eliminarClienteToolStripMenuItem.Text = "Listado de todos los clientes..";
+            this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
+            // 
+            // listadoDeClieToolStripMenuItem
+            // 
+            this.listadoDeClieToolStripMenuItem.Name = "listadoDeClieToolStripMenuItem";
+            this.listadoDeClieToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.listadoDeClieToolStripMenuItem.Text = "Listado dependiendo activad..";
+            this.listadoDeClieToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClieToolStripMenuItem_Click);
+            // 
+            // listadoDependiendoSucursalToolStripMenuItem
+            // 
+            this.listadoDependiendoSucursalToolStripMenuItem.Name = "listadoDependiendoSucursalToolStripMenuItem";
+            this.listadoDependiendoSucursalToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.listadoDependiendoSucursalToolStripMenuItem.Text = "Listado dependiendo sucursal..";
+            this.listadoDependiendoSucursalToolStripMenuItem.Click += new System.EventHandler(this.listadoDependiendoSucursalToolStripMenuItem_Click);
             // 
             // frmInicio
             // 
@@ -161,6 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem listadoDeClieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeSociosDeudoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDelDesarroladorDelSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDependiendoSucursalToolStripMenuItem;
     }
 }
 

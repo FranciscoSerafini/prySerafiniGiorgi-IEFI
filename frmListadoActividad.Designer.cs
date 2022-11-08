@@ -32,9 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstActividades = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvListadoSucursales = new System.Windows.Forms.DataGridView();
             this.cmdListar = new System.Windows.Forms.Button();
             this.cmdExportar = new System.Windows.Forms.Button();
             this.cmdImprimir = new System.Windows.Forms.Button();
@@ -46,8 +44,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSucursales)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,46 +64,38 @@
             // 
             // lstActividades
             // 
+            this.lstActividades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lstActividades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstActividades.FormattingEnabled = true;
             this.lstActividades.Location = new System.Drawing.Point(170, 26);
             this.lstActividades.Name = "lstActividades";
-            this.lstActividades.Size = new System.Drawing.Size(101, 21);
+            this.lstActividades.Size = new System.Drawing.Size(401, 23);
             this.lstActividades.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvListado);
+            this.groupBox1.Controls.Add(this.dgvListadoSucursales);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 186);
+            this.groupBox1.Size = new System.Drawing.Size(559, 186);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de clientes";
             // 
-            // dgvListado
+            // dgvListadoSucursales
             // 
-            this.dgvListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListadoSucursales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvListadoSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoSucursales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2});
-            this.dgvListado.Location = new System.Drawing.Point(6, 19);
-            this.dgvListado.Name = "dgvListado";
-            this.dgvListado.Size = new System.Drawing.Size(243, 150);
-            this.dgvListado.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "DNI";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dgvListadoSucursales.Location = new System.Drawing.Point(6, 19);
+            this.dgvListadoSucursales.Name = "dgvListadoSucursales";
+            this.dgvListadoSucursales.Size = new System.Drawing.Size(544, 150);
+            this.dgvListadoSucursales.TabIndex = 0;
             // 
             // cmdListar
             // 
@@ -115,7 +109,7 @@
             // 
             // cmdExportar
             // 
-            this.cmdExportar.Location = new System.Drawing.Point(190, 258);
+            this.cmdExportar.Location = new System.Drawing.Point(496, 258);
             this.cmdExportar.Name = "cmdExportar";
             this.cmdExportar.Size = new System.Drawing.Size(75, 23);
             this.cmdExportar.TabIndex = 4;
@@ -124,7 +118,7 @@
             // 
             // cmdImprimir
             // 
-            this.cmdImprimir.Location = new System.Drawing.Point(103, 258);
+            this.cmdImprimir.Location = new System.Drawing.Point(236, 258);
             this.cmdImprimir.Name = "cmdImprimir";
             this.cmdImprimir.Size = new System.Drawing.Size(75, 23);
             this.cmdImprimir.TabIndex = 5;
@@ -146,7 +140,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Location = new System.Drawing.Point(103, 318);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 26);
+            this.label3.Size = new System.Drawing.Size(181, 26);
             this.label3.TabIndex = 7;
             // 
             // label4
@@ -184,7 +178,7 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Location = new System.Drawing.Point(103, 357);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 26);
+            this.label7.Size = new System.Drawing.Size(181, 26);
             this.label7.TabIndex = 11;
             // 
             // label8
@@ -192,7 +186,7 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label8.Location = new System.Drawing.Point(103, 392);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(146, 26);
+            this.label8.Size = new System.Drawing.Size(181, 26);
             this.label8.TabIndex = 12;
             // 
             // label9
@@ -200,15 +194,41 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label9.Location = new System.Drawing.Point(103, 435);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 26);
+            this.label9.Size = new System.Drawing.Size(181, 26);
             this.label9.TabIndex = 13;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DNI";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Direccion";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Saldo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frmListadoActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(280, 501);
+            this.ClientSize = new System.Drawing.Size(584, 501);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -229,7 +249,7 @@
             this.Text = "Listado dependiendo actividad";
             this.Load += new System.EventHandler(this.frmListadoDependiendoActividad_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSucursales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,9 +260,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox lstActividades;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvListado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridView dgvListadoSucursales;
         private System.Windows.Forms.Button cmdListar;
         private System.Windows.Forms.Button cmdExportar;
         private System.Windows.Forms.Button cmdImprimir;
@@ -254,5 +272,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

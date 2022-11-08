@@ -48,5 +48,11 @@ namespace prySerafiniGiorgi_IEFI
             frmListadoDeTodosSocios objVentana = new frmListadoDeTodosSocios();
             objVentana.ShowDialog();
         }
+
+        private void listadoDependiendoSucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoSucursal objVentanaSucursal = new frmListadoSucursal();
+            objVentanaSucursal.ShowDialog();
+        }
     }
 }

@@ -32,14 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grpDatosClientes = new System.Windows.Forms.GroupBox();
             this.lblSaldo = new System.Windows.Forms.Label();
-            this.lblDeuda = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.cmdBuscar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmdEliminar = new System.Windows.Forms.Button();
             this.cmdModificar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,15 +69,13 @@
             // grpDatosClientes
             // 
             this.grpDatosClientes.Controls.Add(this.lblSaldo);
-            this.grpDatosClientes.Controls.Add(this.lblDeuda);
             this.grpDatosClientes.Controls.Add(this.lblNombre);
             this.grpDatosClientes.Controls.Add(this.label4);
-            this.grpDatosClientes.Controls.Add(this.label3);
             this.grpDatosClientes.Controls.Add(this.label2);
             this.grpDatosClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDatosClientes.Location = new System.Drawing.Point(12, 93);
             this.grpDatosClientes.Name = "grpDatosClientes";
-            this.grpDatosClientes.Size = new System.Drawing.Size(298, 146);
+            this.grpDatosClientes.Size = new System.Drawing.Size(298, 109);
             this.grpDatosClientes.TabIndex = 8;
             this.grpDatosClientes.TabStop = false;
             this.grpDatosClientes.Text = "Datos del cliente";
@@ -87,18 +83,10 @@
             // lblSaldo
             // 
             this.lblSaldo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSaldo.Location = new System.Drawing.Point(153, 109);
+            this.lblSaldo.Location = new System.Drawing.Point(153, 70);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(113, 26);
             this.lblSaldo.TabIndex = 13;
-            // 
-            // lblDeuda
-            // 
-            this.lblDeuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDeuda.Location = new System.Drawing.Point(153, 66);
-            this.lblDeuda.Name = "lblDeuda";
-            this.lblDeuda.Size = new System.Drawing.Size(113, 26);
-            this.lblDeuda.TabIndex = 12;
             // 
             // lblNombre
             // 
@@ -112,21 +100,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 110);
+            this.label4.Location = new System.Drawing.Point(6, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Saldo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Deuda";
             // 
             // label2
             // 
@@ -157,21 +135,21 @@
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
-            // button3
+            // cmdEliminar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(226, 245);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cmdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdEliminar.Location = new System.Drawing.Point(226, 208);
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
+            this.cmdEliminar.TabIndex = 13;
+            this.cmdEliminar.Text = "Eliminar";
+            this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.button3_Click);
             // 
             // cmdModificar
             // 
             this.cmdModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdModificar.Location = new System.Drawing.Point(226, 530);
+            this.cmdModificar.Location = new System.Drawing.Point(226, 493);
             this.cmdModificar.Name = "cmdModificar";
             this.cmdModificar.Size = new System.Drawing.Size(75, 23);
             this.cmdModificar.TabIndex = 12;
@@ -254,7 +232,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 274);
+            this.groupBox1.Location = new System.Drawing.Point(12, 237);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(298, 250);
             this.groupBox1.TabIndex = 14;
@@ -314,9 +292,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 559);
+            this.ClientSize = new System.Drawing.Size(319, 521);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.cmdEliminar);
             this.Controls.Add(this.cmdModificar);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.txtDni);
@@ -340,14 +318,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpDatosClientes;
         private System.Windows.Forms.Label lblSaldo;
-        private System.Windows.Forms.Label lblDeuda;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Button cmdBuscar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button cmdEliminar;
         private System.Windows.Forms.Button cmdModificar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;

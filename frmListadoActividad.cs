@@ -26,9 +26,9 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdListar_Click(object sender, EventArgs e)
         {
-            string id = Convert.ToString(lstActividades.SelectedValue);
-            clsSocio listado = new clsSocio();
-            listado.FiltrarClientesDeUnaActividad(dgvListado,id );
+            Int32 filtro = (Convert.ToInt32(lstActividades.SelectedValue));
+            clsSocio filtrar = new clsSocio();
+            filtrar.FiltrarClientesDeUnaActividad(dgvListadoSucursales,filtro);
         }
     }
 }

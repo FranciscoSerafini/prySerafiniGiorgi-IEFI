@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="clsActividad.cs" />
     <Compile Include="clsSocio.cs" />
+    <Compile Include="clsSucursales.cs" />
     <Compile Include="frmBuscarSocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="frmListadoDeTodosSocios.Designer.cs">
       <DependentUpon>frmListadoDeTodosSocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoSucursal.Designer.cs">
+      <DependentUpon>frmListadoSucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNuevosSocios.cs">
       <SubType>Form</SubType>
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoDeTodosSocios.resx">
       <DependentUpon>frmListadoDeTodosSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoSucursal.resx">
+      <DependentUpon>frmListadoSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevosSocios.resx">
       <DependentUpon>frmNuevosSocios.cs</DependentUpon>

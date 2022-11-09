@@ -12,6 +12,7 @@ namespace prySerafiniGiorgi_IEFI
 {
     public partial class frmBuscarCliente : Form
     {
+        clsActividad ObjActividad = new clsActividad();
         public frmBuscarCliente()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace prySerafiniGiorgi_IEFI
         {
             Int32 DniCliente = Convert.ToInt32(txtDni.Text);
             clsSocio objCliente = new clsSocio();
+
             objCliente.Buscar(DniCliente);
 
             if (DniCliente != 0)
@@ -32,7 +34,8 @@ namespace prySerafiniGiorgi_IEFI
                 txtNombre.Text = objCliente.Nombre_Apellido;
                 mskDni.Text = objCliente.Dni_Socio.ToString();
                 txtDireccion.Text = objCliente.Direccion;
-                mskCodigoActividad.Text = objCliente.CodigoActividad.ToString();
+                ObjActividad.BuscarActivid(objCliente.CodigoActividad);
+                txtNombreACtividad.Text = ObjActividad.NombreActividad;
                 mskCodigoSucursal.Text = objCliente.CodigoSucursal.ToString();
                 mskSaldo.Text = objCliente.Saldo.ToString();
 
@@ -60,7 +63,7 @@ namespace prySerafiniGiorgi_IEFI
             string nombre = txtNombre.Text;
             string direccion = txtDireccion.Text;
             Int32 codigoSuc = (Convert.ToInt32(mskCodigoSucursal.Text));
-            Int32 codigoAct = (Convert.ToInt32(mskCodigoActividad.Text));
+            Int32 codigoAct = (Convert.ToInt32(txtNombreACtividad.Text));
             Int32 saldo = (Convert.ToInt32(mskSaldo.Text));
             clsSocio modificar = new clsSocio();
             modificar.Dni_Socio = dni;

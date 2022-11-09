@@ -50,8 +50,8 @@
             this.mskDni = new System.Windows.Forms.MaskedTextBox();
             this.mskSaldo = new System.Windows.Forms.MaskedTextBox();
             this.mskCodigoSucursal = new System.Windows.Forms.MaskedTextBox();
-            this.mskCodigoActividad = new System.Windows.Forms.MaskedTextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtNombreACtividad = new System.Windows.Forms.TextBox();
             this.grpDatosClientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -203,9 +203,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(0, 177);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 15);
+            this.label8.Size = new System.Drawing.Size(147, 15);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Codigo de actividad :";
+            this.label8.Text = "Nombre de actividad :";
             // 
             // label9
             // 
@@ -219,11 +219,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNombreACtividad);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.mskDni);
             this.groupBox1.Controls.Add(this.mskSaldo);
             this.groupBox1.Controls.Add(this.mskCodigoSucursal);
-            this.groupBox1.Controls.Add(this.mskCodigoActividad);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -272,14 +272,6 @@
             this.mskCodigoSucursal.Size = new System.Drawing.Size(144, 21);
             this.mskCodigoSucursal.TabIndex = 18;
             // 
-            // mskCodigoActividad
-            // 
-            this.mskCodigoActividad.Location = new System.Drawing.Point(145, 180);
-            this.mskCodigoActividad.Mask = "9";
-            this.mskCodigoActividad.Name = "mskCodigoActividad";
-            this.mskCodigoActividad.Size = new System.Drawing.Size(144, 21);
-            this.mskCodigoActividad.TabIndex = 17;
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(145, 60);
@@ -287,6 +279,13 @@
             this.txtNombre.Size = new System.Drawing.Size(144, 21);
             this.txtNombre.TabIndex = 15;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // txtNombreACtividad
+            // 
+            this.txtNombreACtividad.Location = new System.Drawing.Point(154, 177);
+            this.txtNombreACtividad.Name = "txtNombreACtividad";
+            this.txtNombreACtividad.Size = new System.Drawing.Size(134, 21);
+            this.txtNombreACtividad.TabIndex = 22;
             // 
             // frmBuscarCliente
             // 
@@ -335,8 +334,8 @@
         private System.Windows.Forms.MaskedTextBox mskDni;
         private System.Windows.Forms.MaskedTextBox mskSaldo;
         private System.Windows.Forms.MaskedTextBox mskCodigoSucursal;
-        private System.Windows.Forms.MaskedTextBox mskCodigoActividad;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtNombreACtividad;
     }
 }

@@ -327,8 +327,9 @@ namespace prySerafiniGiorgi_IEFI
             }
         }
 
-        public void ExportarClientes()
+        public void ExportarClientes(Int32 idACtividad)
         {
+
             try
             {
                 conexion.ConnectionString = cadenaConexion;
@@ -342,11 +343,13 @@ namespace prySerafiniGiorgi_IEFI
                 objCrear.WriteLine("Listado de Socios\n");
                 objCrear.WriteLine("Dni_Socio;Nombre_Apellido;Direccion;Saldo\n");
                 cantidad = 0;
+                saldo = 0;
                 if (Lector.HasRows)
                 {
                     while (Lector.Read())
                     {
-                        
+                        if (idACtividad == Lector.GetInt32(4))
+                        {
                             objCrear.Write(Lector.GetInt32(0));
                             objCrear.Write(";");
                             objCrear.Write(Lector.GetString(1));
@@ -354,9 +357,15 @@ namespace prySerafiniGiorgi_IEFI
                             objCrear.Write(Lector.GetString(2));
                             objCrear.Write(";");
                             objCrear.Write(Lector.GetDecimal(5));
-                            objCrear.Write(";");
+                            
+                            
                             cantidad = cantidad + 1;
                             saldo = saldo + Lector.GetDecimal(5);
+                            promedio = saldo / cantidad;
+                            objCrear.Write("\n");
+                            
+                        }
+                            
 
                         
                     }

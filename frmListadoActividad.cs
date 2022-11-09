@@ -51,8 +51,11 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdExportar_Click(object sender, EventArgs e)
         {
+            Int32 idActividad = Convert.ToInt32(lstActividades.SelectedValue);
             clsSocio objCliente = new clsSocio();
-            objCliente.ExportarClientes();
+            objCliente.ExportarClientes(idActividad);
+            
+            
 
         }
     }

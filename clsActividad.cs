@@ -15,7 +15,8 @@ namespace prySerafiniGiorgi_IEFI
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();//enviamos ordenes a las bases de dapto
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();//adpatamos los datos que estan en la base a datos comprensibles por .NET
-
+        private OleDbDataReader Lectora;
+        public string NombreActividad;
         private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=IEFI.mdb";
         private string tabla = "Actividad";
 
@@ -73,7 +74,37 @@ namespace prySerafiniGiorgi_IEFI
 
         }
 
-        
+        public void BuscarActivid(int codigo)
+        {
+            try
+            {
+                //Conecto con la base de datos
+                conexion.ConnectionString = cadenaConexion;
+                //Abro Conexion
+                conexion.Open();
+                //Indico cual es la conexion que voy a utilizar
+                comando.Connection = conexion;
+                //Indico que voy a trabajar directamente con table
+                comando.CommandType = CommandType.Text;
+                //Indico Nombre de la tabla a travez de la variable tabla creada en la 
+                comando.CommandText = "SELECT * FROM Actividad WHERE Codigo_Actividad =" + codigo;
+                //Elemento que me permite convertir los datos que se encuentran en la base de datos a un conjunto de valores que entienda .NET
+                //le paso a adaptador el comando (quequierodelabase)
+                Lectora = comando.ExecuteReader();
+
+                while (Lectora.Read())
+                {
+                    NombreActividad = Lectora[1].ToString();
+                }
+
+                conexion.Close();
+            }
+            catch (Exception Mensaje)
+            {
+                MessageBox.Show(Mensaje.Message);
+                //throw;
+            }
+        }
 
 
 

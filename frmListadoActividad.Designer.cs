@@ -46,8 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblPromedio = new System.Windows.Forms.Label();
+            this.lblSaldoTotal = new System.Windows.Forms.Label();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
             this.prtDocumento = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
@@ -214,21 +214,21 @@
             this.label7.Size = new System.Drawing.Size(181, 26);
             this.label7.TabIndex = 11;
             // 
-            // label8
+            // lblPromedio
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(103, 392);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(181, 26);
-            this.label8.TabIndex = 12;
+            this.lblPromedio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPromedio.Location = new System.Drawing.Point(103, 392);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(181, 26);
+            this.lblPromedio.TabIndex = 12;
             // 
-            // label9
+            // lblSaldoTotal
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(103, 435);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(181, 26);
-            this.label9.TabIndex = 13;
+            this.lblSaldoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSaldoTotal.Location = new System.Drawing.Point(103, 435);
+            this.lblSaldoTotal.Name = "lblSaldoTotal";
+            this.lblSaldoTotal.Size = new System.Drawing.Size(181, 26);
+            this.lblSaldoTotal.TabIndex = 13;
             // 
             // prtVentana
             // 
@@ -244,8 +244,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(584, 501);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblSaldoTotal);
+            this.Controls.Add(this.lblPromedio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -285,8 +285,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPromedio;
+        private System.Windows.Forms.Label lblSaldoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

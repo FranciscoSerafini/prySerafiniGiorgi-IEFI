@@ -28,7 +28,10 @@ namespace prySerafiniGiorgi_IEFI
         {
             Int32 filtro = (Convert.ToInt32(lstActividades.SelectedValue));
             clsSocio filtrar = new clsSocio();
+            //lblPromedio.Text = filtrar.promedioSaldo.ToString();
+            lblSaldoTotal.Text = filtrar.TotalSaldo.ToString();
             filtrar.FiltrarClientesDeUnaActividad(dgvListadoSucursales,filtro);
+
         }
 
         private void cmdImprimir_Click(object sender, EventArgs e)

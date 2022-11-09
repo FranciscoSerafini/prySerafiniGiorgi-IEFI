@@ -64,6 +64,7 @@ namespace prySerafiniGiorgi_IEFI
         public decimal promedioSaldo
         {
             get { return saldo / cantidad; }
+            
         }
         public string Direccion
         {
@@ -380,7 +381,12 @@ namespace prySerafiniGiorgi_IEFI
 
 
         }
+        public Int32 DatosRespuesta()
+        {
+            //StreamReader Lector = new StreamReader();
 
+            return  0;
+        }
     }
 }
 

@@ -45,5 +45,12 @@ namespace prySerafiniGiorgi_IEFI
             clsSocio reporte = new clsSocio();
             reporte.Imprimir(e);
         }
+
+        private void cmdExportar_Click(object sender, EventArgs e)
+        {
+            clsSocio objCliente = new clsSocio();
+            objCliente.ExportarClientes();
+
+        }
     }
 }

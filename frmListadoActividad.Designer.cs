@@ -33,6 +33,10 @@
             this.lstActividades = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvListadoSucursales = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdListar = new System.Windows.Forms.Button();
             this.cmdExportar = new System.Windows.Forms.Button();
             this.cmdImprimir = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
             this.prtDocumento = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
@@ -99,8 +99,35 @@
             this.dgvListadoSucursales.Size = new System.Drawing.Size(544, 150);
             this.dgvListadoSucursales.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DNI";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Direccion";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Saldo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // cmdListar
             // 
+            this.cmdListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdListar.Location = new System.Drawing.Point(16, 258);
             this.cmdListar.Name = "cmdListar";
             this.cmdListar.Size = new System.Drawing.Size(75, 23);
@@ -111,15 +138,18 @@
             // 
             // cmdExportar
             // 
+            this.cmdExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdExportar.Location = new System.Drawing.Point(496, 258);
             this.cmdExportar.Name = "cmdExportar";
             this.cmdExportar.Size = new System.Drawing.Size(75, 23);
             this.cmdExportar.TabIndex = 4;
             this.cmdExportar.Text = "Exportar";
             this.cmdExportar.UseVisualStyleBackColor = true;
+            this.cmdExportar.Click += new System.EventHandler(this.cmdExportar_Click);
             // 
             // cmdImprimir
             // 
+            this.cmdImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdImprimir.Location = new System.Drawing.Point(236, 258);
             this.cmdImprimir.Name = "cmdImprimir";
             this.cmdImprimir.Size = new System.Drawing.Size(75, 23);
@@ -199,32 +229,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(181, 26);
             this.label9.TabIndex = 13;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "DNI";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Direccion";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Saldo";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // prtVentana
             // 

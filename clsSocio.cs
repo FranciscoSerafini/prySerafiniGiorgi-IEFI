@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 
 namespace prySerafiniGiorgi_IEFI
 {
@@ -34,7 +35,7 @@ namespace prySerafiniGiorgi_IEFI
 
 
         //propiedas de solo lecturas 
-        public Int32 Dni_Socio 
+        public Int32 Dni_Socio
         {
             get { return dni; }//retorna el valor del dni
             set { dni = value; }
@@ -45,15 +46,15 @@ namespace prySerafiniGiorgi_IEFI
             set { nombre = value; }
         }
         public decimal Saldo
-        {   
-           get { return saldo; }
+        {
+            get { return saldo; }
             set { saldo = value; }
 
-        } 
+        }
         public decimal TotalSaldo
         {
             get { return saldo; }
-           
+
 
         }
         public Int32 cantidadSocios
@@ -62,12 +63,12 @@ namespace prySerafiniGiorgi_IEFI
         }
         public decimal promedioSaldo
         {
-            get { return saldo/cantidad; }
+            get { return saldo / cantidad; }
         }
         public string Direccion
         {
             get { return direccion; }//retorna el valor del nombre
-            set { direccion= value; }
+            set { direccion = value; }
         }
         public Int32 CodigoSucursal
         {
@@ -100,11 +101,11 @@ namespace prySerafiniGiorgi_IEFI
 
 
                 conexion.Close();
-                
+
             }
-            catch (Exception )
+            catch (Exception)
             {
-                
+
                 //throw;
             }
 
@@ -115,13 +116,13 @@ namespace prySerafiniGiorgi_IEFI
             {
                 conexion.ConnectionString = cadenaConexion; //configuracion de la conexion
                 conexion.Open();
-                
+
                 comando.Connection = conexion;
                 comando.CommandType = CommandType.TableDirect; //comando para traer la tabla
                 comando.CommandText = "Socio";
 
 
-                
+
                 OleDbDataReader DR = comando.ExecuteReader(); //recibe lo que tiene la tabla y el comando ejecuta
                 if (DR.HasRows) //preguntamos si hay filas
                 {
@@ -145,7 +146,7 @@ namespace prySerafiniGiorgi_IEFI
             catch (Exception)
             {
 
-                
+
             }
         }
         public void ListarSocios(DataGridView dgvGrilla)
@@ -167,20 +168,20 @@ namespace prySerafiniGiorgi_IEFI
                 {
                     if (DR.GetDecimal(5) > 0)
                     {
-                    
+
                         dgvGrilla.Rows.Add(DR.GetInt32(0), DR.GetString(1), DR.GetDecimal(5));
                         cantidad++;
                         saldo = saldo + DR.GetDecimal(5);
 
                     }
-                    
+
                 }
                 conexion.Close();
             }
             catch (Exception)
             {
 
-              
+
             }
         }
 
@@ -190,7 +191,7 @@ namespace prySerafiniGiorgi_IEFI
             {
                 String Sql = "";
                 Sql = "INSERT INTO Socio (Dni_Socio,Nombre_Apellido,Direccion,Codigo_Sucursal,Codigo_Actividad,Saldo)";
-                Sql = Sql +  " VALUES (" + Dni_Socio + ",'" + Nombre_Apellido + "','" + Direccion+ "'," + CodigoSucursal+ "," + CodigoActividad + "," + Saldo + ")";
+                Sql = Sql + " VALUES (" + Dni_Socio + ",'" + Nombre_Apellido + "','" + Direccion + "'," + CodigoSucursal + "," + CodigoActividad + "," + Saldo + ")";
                 conexion.ConnectionString = cadenaConexion;
                 conexion.Open();
                 comando.Connection = conexion;
@@ -238,7 +239,7 @@ namespace prySerafiniGiorgi_IEFI
                     "[Direccion] = '" + Direccion + "', " +
                     "[Codigo_Sucursal] = " + CodigoSucursal + " , " +
                     "[Codigo_Actividad] = " + CodigoActividad + " ," +
-                    "[Saldo] = " + Saldo + " WHERE [Dni_Socio] = " + Dni_Socio ;
+                    "[Saldo] = " + Saldo + " WHERE [Dni_Socio] = " + Dni_Socio;
 
 
                 conexion.ConnectionString = cadenaConexion;
@@ -286,12 +287,12 @@ namespace prySerafiniGiorgi_IEFI
             }
             catch (Exception)
             {
-                
+
 
 
             }
         }
-        public void Imprimir(PrintPageEventArgs reporte )
+        public void Imprimir(PrintPageEventArgs reporte)
         {
             try
             {
@@ -307,9 +308,9 @@ namespace prySerafiniGiorgi_IEFI
                 adaptador.Fill(Ds, tabla);
                 if (Ds.Tables[tabla].Rows.Count > 0)
                 {
-                    foreach  (DataRow fila in Ds.Tables[tabla].Rows )
+                    foreach (DataRow fila in Ds.Tables[tabla].Rows)
                     {
-                        reporte.Graphics.DrawString(fila["Dni_Socio"].ToString(),tipoLetra,Brushes.Black, 100,linea);
+                        reporte.Graphics.DrawString(fila["Dni_Socio"].ToString(), tipoLetra, Brushes.Black, 100, linea);
                         reporte.Graphics.DrawString(fila["Nombre_Apellido"].ToString(), tipoLetra, Brushes.Black, 200, linea);
                         reporte.Graphics.DrawString(fila["Direccion"].ToString(), tipoLetra, Brushes.Black, 300, linea);
                         reporte.Graphics.DrawString(fila["Saldo"].ToString(), tipoLetra, Brushes.Black, 400, linea);
@@ -324,9 +325,63 @@ namespace prySerafiniGiorgi_IEFI
                 MessageBox.Show(e.ToString());
             }
         }
+
+        public void ExportarClientes()
+        {
+            try
+            {
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion; //configuracion del comando
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = "Socio";
+                OleDbDataReader Lector = comando.ExecuteReader();
+                //grabamos
+                StreamWriter objCrear = new StreamWriter("ExportarClientes.csv", false);
+                objCrear.WriteLine("Listado de Socios\n");
+                objCrear.WriteLine("Dni_Socio;Nombre_Apellido;Direccion;Saldo\n");
+                cantidad = 0;
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        
+                            objCrear.Write(Lector.GetInt32(0));
+                            objCrear.Write(";");
+                            objCrear.Write(Lector.GetString(1));
+                            objCrear.Write(";");
+                            objCrear.Write(Lector.GetString(2));
+                            objCrear.Write(";");
+                            objCrear.Write(Lector.GetDecimal(5));
+                            objCrear.Write(";");
+                            cantidad = cantidad + 1;
+                            saldo = saldo + Lector.GetDecimal(5);
+
+                        
+                    }
+                    objCrear.Write("Cantidad de socios:");
+                    objCrear.WriteLine(cantidad);
+                    objCrear.Write("Total de saldo:");
+                    objCrear.WriteLine(saldo);
+                    objCrear.Write("Promedio:");
+                    objCrear.WriteLine(saldo/cantidad);
+
+                }
+                conexion.Close();
+                objCrear.Close();
+                MessageBox.Show("Tus datos fueron exportados con EXITO!!!!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Tu datos no pudieron ser exportados");
+                
+            }
+
+
+
+        }
+
     }
-
-
 }
 
     

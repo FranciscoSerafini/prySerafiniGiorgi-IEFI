@@ -13,6 +13,7 @@ namespace prySerafiniGiorgi_IEFI
     public partial class frmBuscarCliente : Form
     {
         clsActividad ObjActividad = new clsActividad();
+        clsSucursales ObjSucursal = new clsSucursales();
         public frmBuscarCliente()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace prySerafiniGiorgi_IEFI
         {
             Int32 DniCliente = Convert.ToInt32(txtDni.Text);
             clsSocio objCliente = new clsSocio();
+
+            
 
             objCliente.Buscar(DniCliente);
 
@@ -35,8 +38,9 @@ namespace prySerafiniGiorgi_IEFI
                 mskDni.Text = objCliente.Dni_Socio.ToString();
                 txtDireccion.Text = objCliente.Direccion;
                 ObjActividad.BuscarActivid(objCliente.CodigoActividad);
-                txtNombreACtividad.Text = ObjActividad.NombreActividad;
-                mskCodigoSucursal.Text = objCliente.CodigoSucursal.ToString();
+                ObjSucursal.BuscarSucursal(objCliente.CodigoSucursal);
+                lstAcitividad.Text = ObjActividad.NombreActividad;
+                lstSucursal.Text = ObjSucursal.NombreSucursal.ToString();
                 mskSaldo.Text = objCliente.Saldo.ToString();
 
 
@@ -62,8 +66,8 @@ namespace prySerafiniGiorgi_IEFI
             Int32 dni = (Convert.ToInt32(mskDni.Text));
             string nombre = txtNombre.Text;
             string direccion = txtDireccion.Text;
-            Int32 codigoSuc = (Convert.ToInt32(mskCodigoSucursal.Text));
-            Int32 codigoAct = (Convert.ToInt32(txtNombreACtividad.Text));
+            Int32 codigoSuc = (Convert.ToInt32(lstSucursal.SelectedIndex));
+            Int32 codigoAct = (Convert.ToInt32(lstAcitividad.SelectedIndex));
             Int32 saldo = (Convert.ToInt32(mskSaldo.Text));
             clsSocio modificar = new clsSocio();
             modificar.Dni_Socio = dni;
@@ -88,6 +92,24 @@ namespace prySerafiniGiorgi_IEFI
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmBuscarCliente_Load(object sender, EventArgs e)
+        {
+            clsSucursales objSucursal = new clsSucursales();
+            objSucursal.ListarComboBox(lstSucursal);
+
+            clsActividad objActividad = new clsActividad();
+            objActividad.ListarC(lstAcitividad);
+
+            lstAcitividad.SelectedIndex = -1;
+            lstSucursal.SelectedIndex = -1;
+
+        }
+
+        private void txtNombreACtividad_TextChanged(object sender, EventArgs e)
         {
 
         }

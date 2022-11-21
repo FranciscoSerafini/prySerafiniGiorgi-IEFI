@@ -88,8 +88,7 @@ namespace prySerafiniGiorgi_IEFI
                 comando.CommandType = CommandType.Text;
                 //Indico Nombre de la tabla a travez de la variable tabla creada en la 
                 comando.CommandText = "SELECT * FROM Actividad WHERE Codigo_Actividad =" + codigo;
-                //Elemento que me permite convertir los datos que se encuentran en la base de datos a un conjunto de valores que entienda .NET
-                //le paso a adaptador el comando (quequierodelabase)
+                
                 Lectora = comando.ExecuteReader();
 
                 while (Lectora.Read())
@@ -103,6 +102,36 @@ namespace prySerafiniGiorgi_IEFI
             {
                 MessageBox.Show(Mensaje.Message);
                 //throw;
+            }
+        }
+
+        public string Buscar(Int32 CodigoActividad)
+        {
+            try
+            {
+                conexion.ConnectionString = cadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+                OleDbDataReader Lector = comando.ExecuteReader();
+                string varDetalleActividiad = "";
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        if (Lector.GetInt32(0) == CodigoActividad)
+                        {
+                            varDetalleActividiad = Lector.GetString(1);
+                        }
+                    }
+                }
+                conexion.Close();
+                return varDetalleActividiad;
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
             }
         }
 

@@ -95,10 +95,26 @@ namespace prySerafiniGiorgi_IEFI
                 comando.CommandText = tabla;
 
                 adaptador = new OleDbDataAdapter(comando);
-                DataSet DS = new DataSet();//tabla en memoria ram que tiene datos de mi tabla
-                adaptador.Fill(DS);
+                OleDbDataReader Dr = comando.ExecuteReader();
+                dgvGrilla.Rows.Clear();
+                string DetalleSucursal = "";
+                string DetalleActividad = "";
+                clsActividad objAcitividad = new clsActividad();
+                clsSucursales objSucursal = new clsSucursales();
 
-                dgvGrilla.DataSource = DS.Tables[0];
+                if (Dr.HasRows)
+                {
+                   
+                    while (Dr.Read())
+                    {
+                        DetalleActividad = objAcitividad.Buscar(Dr.GetInt32(4));
+                        DetalleSucursal = objSucursal.Buscar(Dr.GetInt32(3));
+                        dgvGrilla.Rows.Add(Dr.GetInt32(0), Dr.GetString(1), Dr.GetString(2), DetalleSucursal, DetalleActividad, Dr.GetDecimal(5));
+
+
+                    }
+                }
+               
 
 
                 conexion.Close();
@@ -167,6 +183,7 @@ namespace prySerafiniGiorgi_IEFI
                 saldo = 0;
                 while (DR.Read())
                 {
+
                     if (DR.GetDecimal(5) > 0)
                     {
 
@@ -252,9 +269,9 @@ namespace prySerafiniGiorgi_IEFI
                 conexion.Close();
                 MessageBox.Show("Tu socio pudo ser modificado con EXITO!!");
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Tu socio no pudo ser modficado");
+                MessageBox.Show("Tu socio no pudo ser modficado" +  e.Message);
             }
         }
 
@@ -295,10 +312,15 @@ namespace prySerafiniGiorgi_IEFI
         }
         public void Imprimir(PrintPageEventArgs reporte)
         {
+
             try
             {
                 Int32 linea = 200;
                 Font tipoLetra = new Font("Arial", 10);
+                reporte.Graphics.DrawString("Documento", tipoLetra, Brushes.Black, 100, 150);
+                reporte.Graphics.DrawString("Nombre", tipoLetra, Brushes.Black, 250, 150);
+                reporte.Graphics.DrawString("Direccion", tipoLetra, Brushes.Black, 400, 150);
+                reporte.Graphics.DrawString("Saldo", tipoLetra, Brushes.Black, 550, 150);
                 conexion.ConnectionString = cadenaConexion;
                 conexion.Open();
                 comando.Connection = conexion;
@@ -312,10 +334,10 @@ namespace prySerafiniGiorgi_IEFI
                     foreach (DataRow fila in Ds.Tables[tabla].Rows)
                     {
                         reporte.Graphics.DrawString(fila["Dni_Socio"].ToString(), tipoLetra, Brushes.Black, 100, linea);
-                        reporte.Graphics.DrawString(fila["Nombre_Apellido"].ToString(), tipoLetra, Brushes.Black, 200, linea);
-                        reporte.Graphics.DrawString(fila["Direccion"].ToString(), tipoLetra, Brushes.Black, 300, linea);
-                        reporte.Graphics.DrawString(fila["Saldo"].ToString(), tipoLetra, Brushes.Black, 400, linea);
-                        linea = linea + 15;
+                        reporte.Graphics.DrawString(fila["Nombre_Apellido"].ToString(), tipoLetra, Brushes.Black, 250, linea);
+                        reporte.Graphics.DrawString(fila["Direccion"].ToString(), tipoLetra, Brushes.Black, 400, linea);
+                        reporte.Graphics.DrawString(fila["Saldo"].ToString(), tipoLetra, Brushes.Black, 550, linea);
+                        linea = linea + 50;
                     }
                 }
                 conexion.Close();

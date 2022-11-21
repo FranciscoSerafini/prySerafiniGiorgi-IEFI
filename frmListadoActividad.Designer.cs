@@ -44,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
             this.lblSaldoTotal = new System.Windows.Forms.Label();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
@@ -180,7 +178,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 437);
+            this.label4.Location = new System.Drawing.Point(4, 409);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 15);
             this.label4.TabIndex = 8;
@@ -190,34 +188,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 397);
+            this.label5.Location = new System.Drawing.Point(4, 364);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Promedio";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 357);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Saldo menor";
-            // 
-            // label7
-            // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Location = new System.Drawing.Point(103, 357);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(181, 26);
-            this.label7.TabIndex = 11;
-            // 
             // lblPromedio
             // 
             this.lblPromedio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPromedio.Location = new System.Drawing.Point(103, 392);
+            this.lblPromedio.Location = new System.Drawing.Point(103, 353);
             this.lblPromedio.Name = "lblPromedio";
             this.lblPromedio.Size = new System.Drawing.Size(181, 26);
             this.lblPromedio.TabIndex = 12;
@@ -225,7 +205,7 @@
             // lblSaldoTotal
             // 
             this.lblSaldoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSaldoTotal.Location = new System.Drawing.Point(103, 435);
+            this.lblSaldoTotal.Location = new System.Drawing.Point(103, 398);
             this.lblSaldoTotal.Name = "lblSaldoTotal";
             this.lblSaldoTotal.Size = new System.Drawing.Size(181, 26);
             this.lblSaldoTotal.TabIndex = 13;
@@ -243,11 +223,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(584, 501);
+            this.ClientSize = new System.Drawing.Size(584, 441);
             this.Controls.Add(this.lblSaldoTotal);
             this.Controls.Add(this.lblPromedio);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -283,8 +261,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPromedio;
         private System.Windows.Forms.Label lblSaldoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

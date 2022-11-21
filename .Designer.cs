@@ -49,9 +49,9 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.mskDni = new System.Windows.Forms.MaskedTextBox();
             this.mskSaldo = new System.Windows.Forms.MaskedTextBox();
-            this.mskCodigoSucursal = new System.Windows.Forms.MaskedTextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtNombreACtividad = new System.Windows.Forms.TextBox();
+            this.lstSucursal = new System.Windows.Forms.ComboBox();
+            this.lstAcitividad = new System.Windows.Forms.ComboBox();
             this.grpDatosClientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -193,9 +193,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(0, 139);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 15);
+            this.label7.Size = new System.Drawing.Size(120, 15);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Codigo sucursal:";
+            this.label7.Text = "Nombre sucursal:";
             // 
             // label8
             // 
@@ -219,11 +219,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNombreACtividad);
+            this.groupBox1.Controls.Add(this.lstAcitividad);
+            this.groupBox1.Controls.Add(this.lstSucursal);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.mskDni);
             this.groupBox1.Controls.Add(this.mskSaldo);
-            this.groupBox1.Controls.Add(this.mskCodigoSucursal);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -241,51 +241,52 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(144, 98);
+            this.txtDireccion.Location = new System.Drawing.Point(154, 99);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(144, 21);
+            this.txtDireccion.Size = new System.Drawing.Size(134, 21);
             this.txtDireccion.TabIndex = 21;
             // 
             // mskDni
             // 
-            this.mskDni.Location = new System.Drawing.Point(145, 25);
+            this.mskDni.Location = new System.Drawing.Point(154, 25);
             this.mskDni.Mask = "99999999";
             this.mskDni.Name = "mskDni";
-            this.mskDni.Size = new System.Drawing.Size(144, 21);
+            this.mskDni.Size = new System.Drawing.Size(134, 21);
             this.mskDni.TabIndex = 20;
             this.mskDni.ValidatingType = typeof(int);
             this.mskDni.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskDni_MaskInputRejected);
             // 
             // mskSaldo
             // 
-            this.mskSaldo.Location = new System.Drawing.Point(144, 213);
+            this.mskSaldo.Location = new System.Drawing.Point(154, 210);
             this.mskSaldo.Mask = "99999999999";
             this.mskSaldo.Name = "mskSaldo";
-            this.mskSaldo.Size = new System.Drawing.Size(145, 21);
+            this.mskSaldo.Size = new System.Drawing.Size(134, 21);
             this.mskSaldo.TabIndex = 19;
-            // 
-            // mskCodigoSucursal
-            // 
-            this.mskCodigoSucursal.Location = new System.Drawing.Point(145, 142);
-            this.mskCodigoSucursal.Mask = "9";
-            this.mskCodigoSucursal.Name = "mskCodigoSucursal";
-            this.mskCodigoSucursal.Size = new System.Drawing.Size(144, 21);
-            this.mskCodigoSucursal.TabIndex = 18;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(145, 60);
+            this.txtNombre.Location = new System.Drawing.Point(154, 62);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(144, 21);
+            this.txtNombre.Size = new System.Drawing.Size(134, 21);
             this.txtNombre.TabIndex = 15;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
-            // txtNombreACtividad
+            // lstSucursal
             // 
-            this.txtNombreACtividad.Location = new System.Drawing.Point(154, 177);
-            this.txtNombreACtividad.Name = "txtNombreACtividad";
-            this.txtNombreACtividad.Size = new System.Drawing.Size(134, 21);
-            this.txtNombreACtividad.TabIndex = 22;
+            this.lstSucursal.FormattingEnabled = true;
+            this.lstSucursal.Location = new System.Drawing.Point(154, 139);
+            this.lstSucursal.Name = "lstSucursal";
+            this.lstSucursal.Size = new System.Drawing.Size(134, 23);
+            this.lstSucursal.TabIndex = 23;
+            // 
+            // lstAcitividad
+            // 
+            this.lstAcitividad.FormattingEnabled = true;
+            this.lstAcitividad.Location = new System.Drawing.Point(154, 174);
+            this.lstAcitividad.Name = "lstAcitividad";
+            this.lstAcitividad.Size = new System.Drawing.Size(134, 23);
+            this.lstAcitividad.TabIndex = 24;
             // 
             // frmBuscarCliente
             // 
@@ -303,6 +304,7 @@
             this.Name = "frmBuscarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar cliente";
+            this.Load += new System.EventHandler(this.frmBuscarCliente_Load);
             this.grpDatosClientes.ResumeLayout(false);
             this.grpDatosClientes.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -333,9 +335,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox mskDni;
         private System.Windows.Forms.MaskedTextBox mskSaldo;
-        private System.Windows.Forms.MaskedTextBox mskCodigoSucursal;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtNombreACtividad;
+        private System.Windows.Forms.ComboBox lstSucursal;
+        private System.Windows.Forms.ComboBox lstAcitividad;
     }
 }

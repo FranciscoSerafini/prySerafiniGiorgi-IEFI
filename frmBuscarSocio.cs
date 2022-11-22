@@ -83,17 +83,18 @@ namespace prySerafiniGiorgi_IEFI
 
         private void txtDni_TextChanged(object sender, EventArgs e)
         {
-
+            Limpieza();
+            BotonBuscar();
         }
 
         private void mskDni_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            Limpieza();
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-
+            Limpieza();
         }
 
         private void frmBuscarCliente_Load(object sender, EventArgs e)
@@ -112,6 +113,42 @@ namespace prySerafiniGiorgi_IEFI
         private void txtNombreACtividad_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void Limpieza()
+        {
+            if (txtDireccion.Text != "" && txtDni.Text != "" && txtNombre.Text != "" && mskDni.Text != "" && mskSaldo.Text != "")
+            {
+                cmdModificar.Enabled = true;
+               
+            }
+            else
+            {
+                cmdModificar.Enabled=false;
+                
+            }
+        }
+        private void BotonBuscar()
+        {
+            if (txtDni.Text != "")
+            {
+                cmdBuscar.Enabled = true;
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdBuscar.Enabled=false;
+                cmdEliminar.Enabled = false;
+            }
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            Limpieza();
+        }
+
+        private void mskSaldo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            Limpieza();
         }
     }
 }

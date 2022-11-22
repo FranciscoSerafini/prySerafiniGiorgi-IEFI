@@ -34,19 +34,20 @@
             this.dgvListadoSucursales = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstActividadesSucursales = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstActividadesSucursales = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSucursales)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdListarSucursales
             // 
-            this.cmdListarSucursales.Location = new System.Drawing.Point(400, 242);
+            this.cmdListarSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdListarSucursales.Location = new System.Drawing.Point(12, 239);
             this.cmdListarSucursales.Name = "cmdListarSucursales";
-            this.cmdListarSucursales.Size = new System.Drawing.Size(75, 23);
+            this.cmdListarSucursales.Size = new System.Drawing.Size(463, 23);
             this.cmdListarSucursales.TabIndex = 9;
             this.cmdListarSucursales.Text = "Listar";
             this.cmdListarSucursales.UseVisualStyleBackColor = true;
@@ -89,24 +90,6 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // lstActividadesSucursales
-            // 
-            this.lstActividadesSucursales.FormattingEnabled = true;
-            this.lstActividadesSucursales.Location = new System.Drawing.Point(183, 11);
-            this.lstActividadesSucursales.Name = "lstActividadesSucursales";
-            this.lstActividadesSucursales.Size = new System.Drawing.Size(247, 21);
-            this.lstActividadesSucursales.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Seleccione una sucursal";
-            // 
             // Column3
             // 
             this.Column3.HeaderText = "Direccion";
@@ -118,6 +101,25 @@
             this.Column4.HeaderText = "Saldo";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            // 
+            // lstActividadesSucursales
+            // 
+            this.lstActividadesSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstActividadesSucursales.FormattingEnabled = true;
+            this.lstActividadesSucursales.Location = new System.Drawing.Point(183, 11);
+            this.lstActividadesSucursales.Name = "lstActividadesSucursales";
+            this.lstActividadesSucursales.Size = new System.Drawing.Size(247, 23);
+            this.lstActividadesSucursales.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Seleccione una sucursal";
             // 
             // frmListadoSucursal
             // 

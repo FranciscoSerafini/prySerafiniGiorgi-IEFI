@@ -37,5 +37,10 @@ namespace prySerafiniGiorgi_IEFI
         {
 
         }
+
+        private void frmListadoDeSocios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

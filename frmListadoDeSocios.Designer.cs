@@ -38,10 +38,9 @@
             this.lblTotalSueldos = new System.Windows.Forms.Label();
             this.cmdListar = new System.Windows.Forms.Button();
             this.lblPersonasInscr = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblCantidadPersonasInscripitas2 = new System.Windows.Forms.Label();
+            this.lblPromedioSaldos2 = new System.Windows.Forms.Label();
+            this.lblTotalSaldos1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.grpConsultaDatos.SuspendLayout();
             this.SuspendLayout();
@@ -87,9 +86,9 @@
             this.grpConsultaDatos.Controls.Add(this.lblTotalSueldos);
             this.grpConsultaDatos.Controls.Add(this.cmdListar);
             this.grpConsultaDatos.Controls.Add(this.lblPersonasInscr);
-            this.grpConsultaDatos.Controls.Add(this.label3);
-            this.grpConsultaDatos.Controls.Add(this.label2);
-            this.grpConsultaDatos.Controls.Add(this.label1);
+            this.grpConsultaDatos.Controls.Add(this.lblCantidadPersonasInscripitas2);
+            this.grpConsultaDatos.Controls.Add(this.lblPromedioSaldos2);
+            this.grpConsultaDatos.Controls.Add(this.lblTotalSaldos1);
             this.grpConsultaDatos.Controls.Add(this.dgvGrilla);
             this.grpConsultaDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpConsultaDatos.Location = new System.Drawing.Point(12, 12);
@@ -121,7 +120,7 @@
             // 
             this.cmdListar.Location = new System.Drawing.Point(17, 382);
             this.cmdListar.Name = "cmdListar";
-            this.cmdListar.Size = new System.Drawing.Size(428, 23);
+            this.cmdListar.Size = new System.Drawing.Size(494, 23);
             this.cmdListar.TabIndex = 9;
             this.cmdListar.Text = "Listar";
             this.cmdListar.UseVisualStyleBackColor = true;
@@ -136,60 +135,51 @@
             this.lblPersonasInscr.Size = new System.Drawing.Size(260, 32);
             this.lblPersonasInscr.TabIndex = 5;
             // 
-            // label3
+            // lblCantidadPersonasInscripitas2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 286);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Cantidad de personas inscriptas";
+            this.lblCantidadPersonasInscripitas2.AutoSize = true;
+            this.lblCantidadPersonasInscripitas2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadPersonasInscripitas2.Location = new System.Drawing.Point(14, 286);
+            this.lblCantidadPersonasInscripitas2.Name = "lblCantidadPersonasInscripitas2";
+            this.lblCantidadPersonasInscripitas2.Size = new System.Drawing.Size(213, 15);
+            this.lblCantidadPersonasInscripitas2.TabIndex = 3;
+            this.lblCantidadPersonasInscripitas2.Text = "Cantidad de personas inscriptas";
             // 
-            // label2
+            // lblPromedioSaldos2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 330);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Promedio de saldos";
+            this.lblPromedioSaldos2.AutoSize = true;
+            this.lblPromedioSaldos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPromedioSaldos2.Location = new System.Drawing.Point(14, 330);
+            this.lblPromedioSaldos2.Name = "lblPromedioSaldos2";
+            this.lblPromedioSaldos2.Size = new System.Drawing.Size(135, 15);
+            this.lblPromedioSaldos2.TabIndex = 2;
+            this.lblPromedioSaldos2.Text = "Promedio de saldos";
             // 
-            // label1
+            // lblTotalSaldos1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Total de saldos";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 427);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(539, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.lblTotalSaldos1.AutoSize = true;
+            this.lblTotalSaldos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSaldos1.Location = new System.Drawing.Point(14, 242);
+            this.lblTotalSaldos1.Name = "lblTotalSaldos1";
+            this.lblTotalSaldos1.Size = new System.Drawing.Size(105, 15);
+            this.lblTotalSaldos1.TabIndex = 1;
+            this.lblTotalSaldos1.Text = "Total de saldos";
             // 
             // frmListadoDeSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 449);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(539, 427);
             this.Controls.Add(this.grpConsultaDatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListadoDeSocios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de socios";
+            this.Load += new System.EventHandler(this.frmListadoDeSocios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.grpConsultaDatos.ResumeLayout(false);
             this.grpConsultaDatos.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -201,10 +191,9 @@
         private System.Windows.Forms.Label lblTotalSueldos;
         private System.Windows.Forms.Button cmdListar;
         private System.Windows.Forms.Label lblPersonasInscr;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Label lblCantidadPersonasInscripitas2;
+        private System.Windows.Forms.Label lblPromedioSaldos2;
+        private System.Windows.Forms.Label lblTotalSaldos1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

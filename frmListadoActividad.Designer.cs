@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstActividades = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvListadoSucursales = new System.Windows.Forms.DataGridView();
+            this.dgvListadoActividad = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,16 +40,14 @@
             this.cmdListar = new System.Windows.Forms.Button();
             this.cmdExportar = new System.Windows.Forms.Button();
             this.cmdImprimir = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblSaldoTotal1 = new System.Windows.Forms.Label();
+            this.lblPromedio1 = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
             this.lblSaldoTotal = new System.Windows.Forms.Label();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
             this.prtDocumento = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSucursales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoActividad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +72,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvListadoSucursales);
+            this.groupBox1.Controls.Add(this.dgvListadoActividad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
@@ -83,19 +81,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de clientes";
             // 
-            // dgvListadoSucursales
+            // dgvListadoActividad
             // 
-            this.dgvListadoSucursales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.dgvListadoSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoSucursales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListadoActividad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvListadoActividad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoActividad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvListadoSucursales.Location = new System.Drawing.Point(6, 19);
-            this.dgvListadoSucursales.Name = "dgvListadoSucursales";
-            this.dgvListadoSucursales.Size = new System.Drawing.Size(544, 150);
-            this.dgvListadoSucursales.TabIndex = 0;
+            this.dgvListadoActividad.Location = new System.Drawing.Point(6, 19);
+            this.dgvListadoActividad.Name = "dgvListadoActividad";
+            this.dgvListadoActividad.Size = new System.Drawing.Size(544, 150);
+            this.dgvListadoActividad.TabIndex = 0;
             // 
             // Column1
             // 
@@ -128,7 +126,7 @@
             this.cmdListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdListar.Location = new System.Drawing.Point(16, 258);
             this.cmdListar.Name = "cmdListar";
-            this.cmdListar.Size = new System.Drawing.Size(75, 23);
+            this.cmdListar.Size = new System.Drawing.Size(127, 23);
             this.cmdListar.TabIndex = 3;
             this.cmdListar.Text = "Listar";
             this.cmdListar.UseVisualStyleBackColor = true;
@@ -137,9 +135,9 @@
             // cmdExportar
             // 
             this.cmdExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdExportar.Location = new System.Drawing.Point(496, 258);
+            this.cmdExportar.Location = new System.Drawing.Point(444, 258);
             this.cmdExportar.Name = "cmdExportar";
-            this.cmdExportar.Size = new System.Drawing.Size(75, 23);
+            this.cmdExportar.Size = new System.Drawing.Size(127, 23);
             this.cmdExportar.TabIndex = 4;
             this.cmdExportar.Text = "Exportar";
             this.cmdExportar.UseVisualStyleBackColor = true;
@@ -148,56 +146,39 @@
             // cmdImprimir
             // 
             this.cmdImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdImprimir.Location = new System.Drawing.Point(236, 258);
+            this.cmdImprimir.Location = new System.Drawing.Point(230, 258);
             this.cmdImprimir.Name = "cmdImprimir";
-            this.cmdImprimir.Size = new System.Drawing.Size(75, 23);
+            this.cmdImprimir.Size = new System.Drawing.Size(127, 23);
             this.cmdImprimir.TabIndex = 5;
             this.cmdImprimir.Text = "Imprimir";
             this.cmdImprimir.UseVisualStyleBackColor = true;
             this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
             // 
-            // label2
+            // lblSaldoTotal1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 317);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Saldo mayor";
+            this.lblSaldoTotal1.AutoSize = true;
+            this.lblSaldoTotal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoTotal1.Location = new System.Drawing.Point(2, 378);
+            this.lblSaldoTotal1.Name = "lblSaldoTotal1";
+            this.lblSaldoTotal1.Size = new System.Drawing.Size(76, 15);
+            this.lblSaldoTotal1.TabIndex = 8;
+            this.lblSaldoTotal1.Text = "Saldo total";
             // 
-            // label3
+            // lblPromedio1
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(103, 318);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 26);
-            this.label3.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 409);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Saldo total";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 364);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Promedio";
+            this.lblPromedio1.AutoSize = true;
+            this.lblPromedio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPromedio1.Location = new System.Drawing.Point(9, 325);
+            this.lblPromedio1.Name = "lblPromedio1";
+            this.lblPromedio1.Size = new System.Drawing.Size(69, 15);
+            this.lblPromedio1.TabIndex = 9;
+            this.lblPromedio1.Text = "Promedio";
             // 
             // lblPromedio
             // 
             this.lblPromedio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPromedio.Location = new System.Drawing.Point(103, 353);
+            this.lblPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPromedio.Location = new System.Drawing.Point(134, 324);
             this.lblPromedio.Name = "lblPromedio";
             this.lblPromedio.Size = new System.Drawing.Size(181, 26);
             this.lblPromedio.TabIndex = 12;
@@ -205,7 +186,8 @@
             // lblSaldoTotal
             // 
             this.lblSaldoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSaldoTotal.Location = new System.Drawing.Point(103, 398);
+            this.lblSaldoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoTotal.Location = new System.Drawing.Point(134, 377);
             this.lblSaldoTotal.Name = "lblSaldoTotal";
             this.lblSaldoTotal.Size = new System.Drawing.Size(181, 26);
             this.lblSaldoTotal.TabIndex = 13;
@@ -223,13 +205,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(584, 441);
+            this.ClientSize = new System.Drawing.Size(584, 431);
             this.Controls.Add(this.lblSaldoTotal);
             this.Controls.Add(this.lblPromedio);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPromedio1);
+            this.Controls.Add(this.lblSaldoTotal1);
             this.Controls.Add(this.cmdImprimir);
             this.Controls.Add(this.cmdExportar);
             this.Controls.Add(this.cmdListar);
@@ -242,7 +222,7 @@
             this.Text = "Listado dependiendo actividad";
             this.Load += new System.EventHandler(this.frmListadoDependiendoActividad_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSucursales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoActividad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,14 +233,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox lstActividades;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvListadoSucursales;
+        private System.Windows.Forms.DataGridView dgvListadoActividad;
         private System.Windows.Forms.Button cmdListar;
         private System.Windows.Forms.Button cmdExportar;
         private System.Windows.Forms.Button cmdImprimir;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSaldoTotal1;
+        private System.Windows.Forms.Label lblPromedio1;
         private System.Windows.Forms.Label lblPromedio;
         private System.Windows.Forms.Label lblSaldoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

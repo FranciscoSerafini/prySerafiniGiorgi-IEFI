@@ -418,6 +418,44 @@ namespace prySerafiniGiorgi_IEFI
 
             return  0;
         }
+        public void ListarSocios2(DataGridView dgvGrilla) //listado de socios mas direccion
+        {
+            try
+            {
+                conexion.ConnectionString = cadenaConexion; //configuracion de la conexion
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect; //comando para traer la tabla
+                comando.CommandText = tabla;
+
+                OleDbDataReader DR = comando.ExecuteReader();
+                dgvGrilla.Rows.Clear();
+                cantidad = 0;
+                saldo = 0;
+                while (DR.Read())
+                {
+
+                    if (DR.GetDecimal(5) > 0)
+                    {
+
+                        dgvGrilla.Rows.Add(DR.GetInt32(0), DR.GetString(1), DR.GetString(2), DR.GetDecimal(5));
+                        cantidad++;
+                        saldo = saldo + DR.GetDecimal(5);
+
+                    }
+
+                }
+                conexion.Close();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+
     }
 }
 

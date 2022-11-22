@@ -69,6 +69,7 @@
             this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Name = "acercaDelDesarroladorDelSistemaToolStripMenuItem";
             this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Text = "Acerca del desarrolador del sistema";
+            this.acercaDelDesarroladorDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.acercaDelDesarroladorDelSistemaToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -148,7 +149,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmInicio";
-            this.Text = "Bienvenidos";
+            this.Text = "Bienvenidos || Sistema de control para gimnasio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

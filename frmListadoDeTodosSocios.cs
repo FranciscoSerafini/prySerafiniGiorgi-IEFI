@@ -22,5 +22,11 @@ namespace prySerafiniGiorgi_IEFI
             clsSocio listar = new clsSocio();
             listar.Listar(dgvListadoSocios);
         }
+
+        private void cmdListar_Click_1(object sender, EventArgs e)
+        {
+            clsSocio listar = new clsSocio();
+            listar.Listar(dgvListadoSocios);
+        }
     }
 }

@@ -26,11 +26,18 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdListar_Click(object sender, EventArgs e)
         {
-            Int32 filtro = (Convert.ToInt32(lstActividades.SelectedValue));
-            clsSocio filtrar = new clsSocio();
-            //lblPromedio.Text = filtrar.promedioSaldo.ToString();
-            lblSaldoTotal.Text = filtrar.TotalSaldo.ToString();
-            filtrar.FiltrarClientesDeUnaActividad(dgvListadoSucursales,filtro);
+            //Int32 filtro = (Convert.ToInt32(lstActividades.SelectedValue));
+            //clsSocio filtrar = new clsSocio();
+            ////lblPromedio.Text = filtrar.promedioSaldo.ToString();
+            //lblSaldoTotal.Text = filtrar.TotalSaldo.ToString();
+            //filtrar.FiltrarClientesDeUnaActividad(dgvListadoSucursales,filtro);
+
+            clsSocio objCliente = new clsSocio();
+            objCliente.ListarSocios2(dgvListadoActividad);
+           lblSaldoTotal.Text = objCliente.TotalSaldo.ToString();
+            
+            lblPromedio.Text = objCliente.promedioSaldo.ToString();
+
 
         }
 

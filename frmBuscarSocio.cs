@@ -28,9 +28,18 @@ namespace prySerafiniGiorgi_IEFI
 
             objCliente.Buscar(DniCliente);
 
-            if (DniCliente != 0)
+            if (DniCliente != objCliente.Dni_Socio) //si el documento no se encuentra
             {
-                //le damos valor a las cajas de texto
+                
+                MessageBox.Show("Dni no encontrado");
+
+
+
+            }
+            else
+            {
+
+
                 lblNombre.Text = objCliente.Nombre_Apellido;
                 lblSaldo.Text = objCliente.Saldo.ToString();
 
@@ -42,19 +51,14 @@ namespace prySerafiniGiorgi_IEFI
                 lstAcitividad.Text = ObjActividad.NombreActividad;
                 lstSucursal.Text = ObjSucursal.NombreSucursal.ToString();
                 mskSaldo.Text = objCliente.Saldo.ToString();
-
-
-
-            }
-            else
-            {
-                MessageBox.Show("Dni no encontrado");
             }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
             Int32 DniCliente = Convert.ToInt32(txtDni.Text);
             clsSocio eliminar = new clsSocio();
             eliminar.Dni_Socio = DniCliente;
@@ -63,6 +67,7 @@ namespace prySerafiniGiorgi_IEFI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //modificacion de campos, no se porque no se cambia el nombre del button
             Int32 dni = (Convert.ToInt32(mskDni.Text));
             string nombre = txtNombre.Text;
             string direccion = txtDireccion.Text;
@@ -99,12 +104,15 @@ namespace prySerafiniGiorgi_IEFI
 
         private void frmBuscarCliente_Load(object sender, EventArgs e)
         {
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
+            //cargamos las cajas de texto 
             clsSucursales objSucursal = new clsSucursales();
             objSucursal.ListarComboBox(lstSucursal);
 
             clsActividad objActividad = new clsActividad();
             objActividad.ListarC(lstAcitividad);
-
+            //le damos valor vacio en la interfazgrafica
             lstAcitividad.SelectedIndex = -1;
             lstSucursal.SelectedIndex = -1;
 
@@ -119,12 +127,12 @@ namespace prySerafiniGiorgi_IEFI
             if (txtDireccion.Text != "" && txtDni.Text != "" && txtNombre.Text != "" && mskDni.Text != "" && mskSaldo.Text != "")
             {
                 cmdModificar.Enabled = true;
-               
+                cmdEliminar.Enabled = true;
             }
             else
             {
                 cmdModificar.Enabled=false;
-                
+                cmdEliminar.Enabled=false;
             }
         }
         private void BotonBuscar()
@@ -132,14 +140,15 @@ namespace prySerafiniGiorgi_IEFI
             if (txtDni.Text != "")
             {
                 cmdBuscar.Enabled = true;
-                cmdEliminar.Enabled = true;
+                
             }
             else
             {
                 cmdBuscar.Enabled=false;
-                cmdEliminar.Enabled = false;
+                
             }
         }
+        
 
         private void txtDireccion_TextChanged(object sender, EventArgs e)
         {

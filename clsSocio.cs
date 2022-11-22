@@ -38,7 +38,7 @@ namespace prySerafiniGiorgi_IEFI
         public Int32 Dni_Socio
         {
             get { return dni; }//retorna el valor del dni
-            set { dni = value; }
+            set { dni = value; } //  especifica las columnas que se deben actualizar y los valores nuevos para las columnas (toma el valor y lo alamacena)
         }
         public string Nombre_Apellido
         {
@@ -331,7 +331,7 @@ namespace prySerafiniGiorgi_IEFI
                 adaptador.Fill(Ds, tabla);
                 if (Ds.Tables[tabla].Rows.Count > 0)
                 {
-                    foreach (DataRow fila in Ds.Tables[tabla].Rows)
+                    foreach (DataRow fila in Ds.Tables[tabla].Rows) //ejecuta su cuerpo para cada elemento de la colección 
                     {
                         reporte.Graphics.DrawString(fila["Dni_Socio"].ToString(), tipoLetra, Brushes.Black, 100, linea);
                         reporte.Graphics.DrawString(fila["Nombre_Apellido"].ToString(), tipoLetra, Brushes.Black, 250, linea);
@@ -359,18 +359,18 @@ namespace prySerafiniGiorgi_IEFI
                 comando.Connection = conexion; //configuracion del comando
                 comando.CommandType = CommandType.TableDirect;
                 comando.CommandText = "Socio";
-                OleDbDataReader Lector = comando.ExecuteReader();
+                OleDbDataReader Lector = comando.ExecuteReader(); //ejecuta la sentencia sql
                 //grabamos
                 StreamWriter objCrear = new StreamWriter("ExportarClientes.csv", false);
                 objCrear.WriteLine("Listado de Socios\n");
                 objCrear.WriteLine("Dni_Socio;Nombre_Apellido;Direccion;Saldo\n");
                 cantidad = 0;
                 saldo = 0;
-                if (Lector.HasRows)
+                if (Lector.HasRows) //si hay fila
                 {
-                    while (Lector.Read())
+                    while (Lector.Read()) //mientras eof
                     {
-                        if (idACtividad == Lector.GetInt32(4))
+                        if (idACtividad == Lector.GetInt32(4)) 
                         {
                             objCrear.Write(Lector.GetInt32(0));
                             objCrear.Write(";");
@@ -391,6 +391,7 @@ namespace prySerafiniGiorgi_IEFI
 
                         
                     }
+                    //escribimos
                     objCrear.Write("Cantidad de socios:");
                     objCrear.WriteLine(cantidad);
                     objCrear.Write("Total de saldo:");

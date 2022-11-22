@@ -25,6 +25,8 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdListarSucursales_Click(object sender, EventArgs e)
         {
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
             Int32 varFiltro = Convert.ToInt32(lstActividadesSucursales.SelectedValue);
             clsSucursales filtro = new clsSucursales();
             filtro.FiltrarClientesDeUnaSucursal(dgvListadoSucursales,varFiltro);

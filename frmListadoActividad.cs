@@ -19,6 +19,8 @@ namespace prySerafiniGiorgi_IEFI
 
         private void frmListadoDependiendoActividad_Load(object sender, EventArgs e)
         {
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
             clsActividad actividad = new clsActividad();
             actividad.ListarC(lstActividades);
 
@@ -26,11 +28,7 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdListar_Click(object sender, EventArgs e)
         {
-            //Int32 filtro = (Convert.ToInt32(lstActividades.SelectedValue));
-            //clsSocio filtrar = new clsSocio();
-            ////lblPromedio.Text = filtrar.promedioSaldo.ToString();
-            //lblSaldoTotal.Text = filtrar.TotalSaldo.ToString();
-            //filtrar.FiltrarClientesDeUnaActividad(dgvListadoSucursales,filtro);
+            //listamos en la interfaz grafica
 
             clsSocio objCliente = new clsSocio();
             objCliente.ListarSocios2(dgvListadoActividad);
@@ -58,6 +56,8 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdExportar_Click(object sender, EventArgs e)
         {
+            //exportamos en excel
+
             Int32 idActividad = Convert.ToInt32(lstActividades.SelectedValue);
             clsSocio objCliente = new clsSocio();
             objCliente.ExportarClientes(idActividad);

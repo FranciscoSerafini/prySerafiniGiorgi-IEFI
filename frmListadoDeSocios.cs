@@ -24,6 +24,9 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdListar_Click(object sender, EventArgs e)
         {
+            
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
             clsSocio objCliente = new clsSocio();
             objCliente.ListarSocios(dgvGrilla);
             lblTotalSueldos.Text = objCliente.TotalSaldo.ToString();

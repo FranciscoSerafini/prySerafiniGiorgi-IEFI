@@ -31,6 +31,9 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdAgregarCliente_Click(object sender, EventArgs e)
         {
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
+            //agregamos el nuevo cliente
             clsSocio agregado = new clsSocio();
             agregado.Dni_Socio = Convert.ToInt32(mskDni.Text);
             agregado.Nombre_Apellido = txtNombre.Text;

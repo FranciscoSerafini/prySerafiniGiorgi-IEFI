@@ -118,10 +118,11 @@
             // 
             // txtDni
             // 
+            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDni.Location = new System.Drawing.Point(49, 18);
             this.txtDni.MaxLength = 8;
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(156, 20);
+            this.txtDni.Size = new System.Drawing.Size(156, 21);
             this.txtDni.TabIndex = 9;
             this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
@@ -280,7 +281,7 @@
             // mskSaldo
             // 
             this.mskSaldo.Location = new System.Drawing.Point(154, 210);
-            this.mskSaldo.Mask = "99999";
+            this.mskSaldo.Mask = "9999";
             this.mskSaldo.Name = "mskSaldo";
             this.mskSaldo.Size = new System.Drawing.Size(134, 21);
             this.mskSaldo.TabIndex = 19;

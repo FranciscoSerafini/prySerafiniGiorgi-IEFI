@@ -25,6 +25,8 @@ namespace prySerafiniGiorgi_IEFI
 
         private void cmdListar_Click_1(object sender, EventArgs e)
         {
+            //llamamos a la clase
+            //ejecuta el procediemento de la clase
             clsSocio listar = new clsSocio();
             listar.Listar(dgvListadoSocios);
         }
